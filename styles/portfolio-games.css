@@ -1,0 +1,401 @@
+.console{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.games { 
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.games .game-registers {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: RGB(255, 255, 255);
+}
+
+
+.games .game-registers button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 9rem;
+  height: 9rem;
+  padding: 0.5em;
+  background-color: #B0B0B0;
+  font: inherit;
+  border-radius: 1.5rem 1.5rem 0 0;
+  border: none;
+  box-shadow: 1rem 0.5rem 0.5rem rgba(0, 0, 0, 0.25);
+}
+
+/* Define the bounce animation */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(100px);
+  }
+  40% {
+    transform: translateY(30px);
+  }
+  60% {
+    transform: translateY(100px);
+  }
+  80% {
+    transform: translateY(60px);
+  }
+  90% {
+    transform: translateY(100px);
+  }
+  80% {
+    transform: translateY(80px);
+  }
+  90% {
+    transform: translateY(100px);
+  }
+  95% {
+    transform: translateY(95px);
+  }
+  100% {
+    transform: translateY(100px);
+  }
+}
+
+/* Define the return animation */
+@keyframes return {
+  0% {
+    transform: translateY(100px); /* Start position */
+  }
+  100% {
+    transform: translateY(0); /* Initial position */
+  }
+}
+
+.games .game-registers button.active-game {
+  display: flex;
+  justify-content: center;
+  box-shadow: 1rem 0.5rem 0.5rem rgba(0, 0, 0, 0.25), 0 0 0.5rem #54AFE4;
+  animation: bounce 0.5s ease forwards;
+}
+
+.games .game-registers button:hover {
+  box-shadow: 1rem 0.5rem 0.5rem rgba(0, 0, 0, 0.25), 0 0 0.5rem #54AFE4;
+}
+
+.games .game-registers button:not(.active-game) {
+  display: flex;
+  justify-content: center;
+  transform: translateY(0); /* Initial position */
+  animation: return 0.5s ease forwards;
+}
+
+.game-title{
+  color: white;
+  font-size: 0.9rem;
+  margin-top: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  border-radius: 3vh;
+  padding: 0.25rem;
+  background-color: #B0B0B0;
+  box-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+
+.cover-image{
+  position: relative;
+  width: 90%;
+  border-radius: 0.5rem;
+}
+
+.games .game-registers button:hover {
+  cursor: pointer;
+}
+
+.games .game-bodies {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0em;
+  background-color: white;
+  flex-grow: 1;
+  overflow-y: auto;
+  border: solid;
+  border-width: 0.5rem;
+  border-radius: 1rem;
+  border-color: #B0B0B0;
+  z-index: 99;
+}
+
+
+.neutral-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: black; /* Black background */
+}
+
+.neutral-message {
+  color: white; /* White text */
+  font-size: 24px; /* Adjust the font size as needed */
+  text-align: center; /* Center align the text */
+}
+
+/* Hide preexisting game bodies */
+.game-bodies > div:not(.neutral-body) {
+  display: none;
+}
+
+.game-1{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0rem;
+  width: 100%;
+  height: 100%;
+}
+
+.game-2{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0rem;
+  width: 100%;
+  height: 100%;
+}
+
+.game-3{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0rem;
+  width: 100%;
+  height: 100%;
+}
+
+.game-4{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0rem;
+  width: 100%;
+  height: 100%;
+}
+
+.left_part{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+  width: 50vh;
+  height: 60vh;
+}
+.right_part{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 80vh;
+  height: 60vh;
+}
+
+video{
+  position: relative;
+  width: 100%;
+  height: 45%;
+  border-radius: 1rem;
+}
+
+.game_pitch{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 45%;
+  background-color: black;
+  color: white;
+  border-radius: 1rem;
+}
+.game_pitch p{
+  padding: 0.5rem;
+  flex-direction: column;
+  color: white;
+  font-size: 0.7rem;
+  line-height: 1.5rem;
+}
+.game_pitch .highlight{
+  font-size: 0.7rem;
+}
+
+.project_presentation{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 95%;
+  background-color: black;
+  border-radius: 1rem;
+}
+
+/* Carousel */
+.carousel{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide{
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  opacity: 0;
+  color: white;
+  transition: 200ms opacity ease-in-out;
+}
+
+.slide[data-active]{
+  opacity: 1;
+}
+
+.slide > img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.carousel ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slide-buttons_container{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 45vh;
+}
+
+.carousel button{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  height: max-content;
+  background: none;
+  border: none;
+  padding: 0rem;
+  box-shadow: 0 0 0;
+}
+
+.carousel-button:hover{
+  cursor: pointer;
+  filter: brightness(120%);
+}
+.carousel-button:active{
+  filter: brightness(80%);
+}
+
+.arrow{
+  width: 30%;
+}
+
+.slide-counter {
+  position: absolute;
+  top: -11rem;
+  right: 2rem;
+  color: white;
+}
+
+/* Pages setup */
+.id-page{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1rem;
+  line-height: 2rem;
+}
+.id_left-section{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.id_right-section{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.slide-image_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.slide-image{
+  width: 80%;
+  border-radius: 1rem;
+}
+
+.slide-text{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slide-text p{
+  font-size: 1rem;
+  position: relative;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  min-height: 45%;
+  background-color: black;
+  color: white;
+  border-radius: 1rem;
+  line-height: 2rem;
+}

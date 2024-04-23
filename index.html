@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- <head> contains all elements that are NOT visible on the page -->
+  <head>
+    <title>Loic Edoh - Game Design Portfolio</title>
+    <!-- Loads website styles -->
+
+    <link rel="stylesheet" href="styles/portfolio-sections.css">
+    <link rel="stylesheet" href="styles/portfolio-header.css">
+    <link rel="stylesheet" href="styles/portfolio-games.css">
+
+    <!-- Loads JS scripts -->
+    <script src="scripts/portfolio-functions.js" defer></script>
+    <script src="scripts/language.js" defer></script>
+
+
+  </head>
+
+  <!-- <body> contains all elements that are visible on the page -->
+  <body>
+    <!-- Navigation bar -->
+    <nav id="nav" class="navbar" class="active">
+      <div class="left-section">
+        <div id="menu_icons">
+          <button class="menu_button">
+            <img class="menu_icon" src="assets/navbar/icons8-menu-64.png">
+          </button>
+        </div>
+
+        <ul>
+          <li class="english" style>
+            <a href="#about">ABOUT</a>
+          </li>
+          <li class="french" style="display: none;">
+            <a href="#about">À PROPOS</a>
+          </li>
+          <li class="english" style>
+            <a href="#games">PROJECTS</a>
+          </li>
+          <li class="french" style="display: none;">
+            <a href="#games">PROJETS</a>
+          </li>
+          <li class="english" style>
+            <a href="#contact">CONTACT</a>
+          </li>
+          <li class="french" style="display: none;">
+            <a href="#contact">CONTACT</a>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="middle-section">
+        <p class="name">LOIC EDOH</p>
+        <p class="subtitle">- Game Designer Portfolio -</p>
+      </div>
+
+      <div class="right-section">
+        <div class="language-slider">
+            
+            <input type="checkbox" id="language-switch">
+            <label for="language-switch" class="slider-button">
+              <img class="eng-flag" src="assets/flags/icons8-grande-bretagne-circulaire-48.png">
+              <img class="fr-flag" src="assets/flags/icons8-france-circulaire-48.png">
+            </label>
+            <div class="language-indicator">
+              <div class="english-indicator">ENG</div>
+              <div class="french-indicator">FRA</div>
+            </div>
+            
+        </div>
+      </div>
+      
+    </nav>
+
+    <!-- About Section-->
+    <section id="about">
+      <div class="about_container">
+
+        <div class="about-title_container">
+          <div class="about_title">
+            <h2 class="english" style>ABOUT ME</h2>
+            <h2 class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+              À PROPOS DE MOI
+            </h2>
+  
+            <div class="about_title_line"></div>
+            
+          </div>
+        </div>
+        
+        <div class="info_container">
+
+          <div class="profile_container">
+  
+            <img class="profile_picture" src="assets/profile_picture.jpg">
+  
+            <div class="social_icons">
+              <a class="mail-button" href="mailto: l.edoh@outlook.com" target="_blank">
+                <img class="mail" src="assets/social_icons/icons8-message-100.png">
+              </a>
+  
+              <a class="itch-button" href="https://en-ra.itch.io/" target="_blank">
+                <img class="itch" src="assets/social_icons/icons8-itch-io-100.png">
+              </a>
+  
+              <a class="linked-in-button" href="https://www.linkedin.com/in/lo%C3%AFc-edoh-3798aa196/" target="_blank">
+                <img class="linked-in" src="assets/social_icons/icons8-linkedin-100.png">
+              </a>
+            </div>
+          </div>
+          
+          <div class="about_desc">
+            <p class="english">
+              When I was younger, I used to spend a lot of time at a friend's house. 
+              Those afternoons spent playing allowed me to discover many franchises, 
+              such as <span class="highlight">Monster Hunter</span>, which still accompany me today. When I got to high school, 
+              I started to take a closer interest in video games creation. That's how I got into 
+              studying <span class="highlight">Game Design</span>, and later specialized in it. 
+              Since then, my <span class="highlight">passion</span> has only grown stronger.
+            </p>
+            <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+              Plus jeune, j'avais pour habitude de passer beaucoup de temps chez un de mes amis. 
+              Ces après-midi passées à jouer m'ont permis de découvrir de nombreuses licences, 
+              telles que <span class="highlight">Monster Hunter</span>, qui m'accompagnent encore aujourd'hui. Arrivé au lycée, 
+              j'ai commencé à m'intéresser de plus près à la création de jeux-vidéo. 
+              C'est comme ça que je me suis lancé dans des études <span class="highlight">Conception</span> et, 
+              par la suite, spécialisé en <span class="highlight">Game Design</span>. 
+              Depuis, ma <span class="highlight">passion</span> n'a eu de cesse de s'amplifier.              
+            </p>
+          </div>
+
+        </div>
+
+        <div class="skills-experience_container">
+          <div class="skills_container">
+            <div class="skills_title_container">
+              <div class="skills_title">
+                <h3 class="english" style>SKILLS</h3>
+                <h3 class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                  COMPÉTENCES</h3>
+
+                <div class="skills_title_line"></div>
+
+              </div>
+            </div>
+
+            <div class="hard-soft_container">
+
+              <div class="hard-skills">
+                <div class="hard-skills_title_container">
+                  <div class="hard-skills_title">
+                    <h4 class="english" style>HARD SKILLS</h4>
+                    <h4 class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                      HARD SKILLS</h4>
+    
+                    <div class="subskills_title_line"></div>
+                  </div>
+                </div>
+
+                <div class="software_icons">
+                  <img class="unity_logo" src="assets/softwares_icons/unity_logo.png">
+                  <img class="unreal_logo" src="assets/softwares_icons/unreal-engine_logo.png">
+                  <img class="excel_logo" src="assets/softwares_icons/excel_logo.png">
+                  <img class="word_logo" src="assets/softwares_icons/word_logo.png">
+                  <img class="indesign_logo" src="assets/softwares_icons/indesign_logo.png">
+                  <img class="fmod_logo" src="assets/softwares_icons/fmod_logo.png">
+                  <img class="fl-studio_logo" src="assets/softwares_icons/fl-studio_logo.png">
+                  <img class="figma_logo" src="assets/softwares_icons/figma_logo.png">
+                  <img class="youtrack_logo" src="assets/softwares_icons/youtrack_logo.png">
+                  <img class="csharp_logo" src="assets/softwares_icons/csharp_logo.png">
+                </div>
+
+              </div>
+
+              <div class="soft-skills">
+                <div class="soft-skills_title_container">
+                  <div class="soft-skills_title">
+                    <h4 class="english" style>SOFT SKILLS</h4>
+                    <h4 class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                      SOFT SKILLS</h4>
+    
+                    <div class="subskills_title_line"></div>
+
+                    <div class="soft_list">
+                      <p class="english" style>
+                        Empathy<br/>
+                        Adaptability<br/>
+                        Determination<br/>
+                        Creativity<br/>
+                        Independance<br/>
+                        Curiosity<br/>
+                      </p>
+                      <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                        Empathie<br/>
+                        Adaptabilité<br/>
+                        Détermination<br/>
+                        Créativité<br/>
+                        Autonomie<br/>
+                        Curiosité<br/>
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          
+          <div class="experience_container">
+            <div class="experience_title_container">
+              <div class="experience_title">
+                <h3 class="english" style>EXPERIENCE</h3>
+                <h3 class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                  EXPÉRIENCE</h3>
+
+                <div class="experience_title_line"></div>
+
+              </div>
+            </div>
+
+            <div class="experiences_container">
+              <div class="experience-1">
+                <p class="english" style>
+                  <strong>GAMAN GAMES</strong> October 2022 - August 2023<br>
+                  <u>Game Designer - Apprenticeship</u><br>
+                  <span class="highlight">Core gameplay</span>; Gameplay <span class="highlight">Pillars</span>;<br>
+                  3Cs; <span class="highlight">Documentation update</span>; QA;<br>
+                  Asset referencing;<br>
+                <p>
+                <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                  <strong>GAMAN GAMES</strong> Octobre 2022 - Août 2023<br>
+                  <u>Game Designer - Apprentissage</u><br>
+                  <span class="highlight">Core gameplay</span>; Gameplay <span class="highlight">Pillars</span>;<br>
+                  3Cs; <span class="highlight">Suivi de documentation</span>; QA;<br>
+                  Référencement d'assets;<br>
+                </p>
+              </div>
+
+              <div class="experience-2">
+                <p class="english" style>
+                  <strong>EMOTION DESIGNERS</strong> October 2021 - May 2022<br>
+                  <u>Game Designer - Internship</u><br>
+                  <span class="highlight">Game Design Document</span>; Integration;<br>
+                  Documentation update; QA;<br>
+                  Asset referencing;<br>
+                <p>
+                <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                  <strong>EMOTION DESIGNERS</strong> Octobre 2021 - Mai 2022<br>
+                  <u>Game Designer - Stage</u><br>
+                  <span class="highlight">Game Design Document</span>; Intégration;<br>
+                  Suivi de documentation; QA;<br>
+                  Référencement d'assets;<br>
+                </p>
+              </div>
+
+              <div class="experience-3">
+                <p class="english" style>
+                  <strong>WAKO FACTORY</strong> January 2021 - February 2021<br>
+                  <u>Game Designer - Internship</u><br>
+                  <span class="highlight">High Concept Document</span>; Documentation update
+                <p>
+                <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                  <strong>EMOTION DESIGNERS</strong> Janvier 2021 - Février 2021<br>
+                  <u>Game Designer - Stage</u><br>
+                  <span class="highlight">High Concept Document</span>; Suivi de documentation
+                </p>
+              </div>
+              
+            </div>
+
+          </div>
+        </div>
+
+        <div class="languages-travels-education_container">
+          <div class="languages_container">
+            <div class="languages_title_container">
+              <div class="languages_title">
+                <h3 class="english" style>LANGUAGES</h3>
+                <h3 class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                  LANGUES
+                </h3>
+
+                <div class="languages_title_line"></div>
+
+              </div>
+            </div>
+
+            <div class="spoken-languages">
+                <div class="lang-1">
+                  <img src="assets/flags/icons8-france-circulaire-48.png">
+                  <p class="english" style>Native</p>
+                  <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                    Langue Maternelle</p>
+                </div>
+
+                <div class="lang-2">
+                  <img src="assets/flags/icons8-grande-bretagne-circulaire-48.png">
+                  <p class="english" style>Fluent</p>
+                  <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                    Courant</p>
+                </div>
+
+                <div class="lang-3">
+                  <img src="assets/flags/icons8-chine-circulaire-48.png">
+                  <p class="english" style>Basics</p>
+                  <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                    Notions</p>
+                </div>
+
+                <div class="lang-4">
+                  <img src="assets/flags/icons8-japon-circulaire-48.png">
+                  <p class="english" style>Basics</p>
+                  <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                    Notions</p>
+                </div>
+
+            </div>
+
+            
+          </div>
+
+          <div class="travels_container">
+            <div class="travels_title_container">
+              <div class="travels_title">
+                <h3 class="english" style>TRAVELS</h3>
+                <h3 class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                  VOYAGES
+                </h3>
+
+                <div class="travels_title_line"></div>
+
+              </div>
+            </div>
+
+            <div class="destinations">
+              <div class="destination-1">
+                <img src="assets/flags/icons8-france-circulaire-48.png">
+                <p class="english" style>France</p>
+                <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                  France</p>
+              </div>
+
+              <div class="destination-2">
+                <img src="assets/flags/icons8-togo-circulaire-48.png">
+                <p class="english" style>Togo</p>
+                <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                  Togo</p>
+              </div>
+
+              <div class="destination-3">
+                <img src="assets/flags/icons8-bénin-circulaire-48.png">
+                <p class="english" style>Benin</p>
+                <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                  Bénin</p>
+              </div>
+
+              <div class="destination-4">
+                <img src="assets/flags/icons8-kenya-circulaire-48.png">
+                <p class="english" style>Kenya</p>
+                <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                  Kenya</p>
+              </div>
+
+              <div class="destination-5">
+                <img src="assets/flags/icons8-tanzanie-circulaire-48.png">
+                <p class="english" style>Tanzania</p>
+                <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                  Tanzanie</p>
+              </div>
+
+              <div class="destination-6">
+                <img src="assets/flags/icons8-cameroun-circulaire-48.png">
+                <p class="english" style>Cameroon</p>
+                <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                  Cameroun</p>
+              </div>
+
+              <div class="destination-7">
+                <img src="assets/flags/icons8-usa-circulaire-48.png">
+                <p class="english" style>USA</p>
+                <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                  États-Unis</p>
+              </div>
+
+              <div class="destination-8">
+                <img src="assets/flags/icons8-italie-circulaire-48.png">
+                <p class="english" style>Italy</p>
+                <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                  Italie</p>
+              </div>
+
+              <div class="destination-9">
+                <img src="assets/flags/icons8-canada-circulaire-48.png">
+                <p class="english" style>Canada</p>
+                <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                  Canada</p>
+              </div>
+
+              <div class="destination-10">
+                <img src="assets/flags/icons8-grande-bretagne-circulaire-48.png">
+                <p class="english" style>UK</p>
+                <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                  Royaume-Uni</p>
+              </div>
+
+              <div class="destination-11">
+                <img src="assets/flags/icons8-andorre-circulaire-48.png">
+                <p class="english" style>Andora</p>
+                <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                  Andorre</p>
+              </div>
+
+              <div class="destination-12">
+                <img src="assets/flags/icons8-coree-du-sud-circulaire-48.png">
+                <p class="english" style>South Korea</p>
+                <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                  Corée<br> du Sud</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="education_container">
+            <div class="education_container">
+              <div class="education_title_container">
+                <div class="education_title">
+                  <h3 class="english" style>EDUCATION</h3>
+                  <h3 class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                    FORMATION</h3>
+  
+                  <div class="education_title_line"></div>
+  
+                </div>
+              </div>
+  
+              <div class="schools_container">
+                <div class="school-1">
+                  <p class="english" style>
+                    <strong>E-artsup</strong> 2021 - 2023<br>
+                    <u>Game Design - Master</u><br>
+                    Master in Creative Direction and digital design,<br>
+                    Design of <span class="highlight">games and interactive media</span><br>
+                  <p>
+                  <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                    <strong>E-artsup</strong> 2021 - 2023<br>
+                    <u>Game Design - Maîtrise</u><br>
+                    Master Direction de la création et design numérique,<br>
+                    Conception de <span class="highlight">jeux et médias interactifs</span>
+                  </p>
+                </div>
+
+                <div class="school-2">
+                  <p class="english" style>
+                    <strong>L'École de design Nantes Atlantique</strong> 2018 - 2021<br>
+                    <u>Game Designer - Bachelor's degree</u><br>
+                    Bdes (Bachelor's Degree) <span class="highlight">Game UX Design</span><br>
+                  <p>
+                  <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                    <strong>L'École de design Nantes Atlantique</strong> 2018 - 2021<br>
+                    <u>Game Design - Licence</u><br>
+                    Bdes <span class="highlight">Game UX Design</span>
+                  </p>
+                </div>
+                
+              </div>
+  
+            </div>
+          </div>
+
+        </div>
+
+        <div class="hobbies_container">
+          <div class="hobbies_title_container">
+            <div class="hobbies_title">
+              <h3 class="english" style>HOBBIES</h3>
+              <h3 class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                CENTRES D'INTÉRET</h3>
+
+              <div class="hobbies_title_line"></div>
+
+            </div>
+
+            <div class="hobbies_icons">
+              <img class="video-games" src="assets/hobbies_icons/icons8-manette-100.png">
+              <img class="cinema" src="assets/hobbies_icons/icons8-clap-100.png">
+              <img class="guitar" src="assets/hobbies_icons/icons8-guitare-100.png">
+              <img class="music" src="assets/hobbies_icons/icons8-notes-de-musique-100.png">
+              <img class="workout" src="assets/hobbies_icons/icons8-haltère-100.png">
+              <img class="martial-arts" src="assets/hobbies_icons/icons8-boxe-100.png">
+            </div>
+
+          </div>
+        </div>
+      </div>
+        
+    </section>
+
+    <!-- Games Section-->
+    <section id="games">
+      <div class="console">
+
+        <div class="games">
+          <div class="game-registers">
+              <button>
+                <div class="game-title">Heavy Skits</div>
+                <img class="cover-image" src="assets/game-covers/heavy-skits.png">         
+              </button>
+              <button>
+                <div class="game-title">Airship City</div>
+                <img class="cover-image" src="assets/game-covers/airship-city.png"> 
+              </button>
+              <button>
+                <div class="game-title">Delivered With Care</div>
+                <img class="cover-image" src="assets/game-covers/dwc.png"> 
+              </button>
+              <button>
+                <div class="game-title">Greedy Bubble</div>
+                <img class="cover-image" src="assets/game-covers/greedy-bubble.png"> 
+              </button>
+          </div>
+
+          <div class="game-bodies">
+            
+            <div class="neutral-body" style="display: flex;">
+              <div class="neutral-message">
+                <p class="english" style>
+                  Please <span class="highlight">insert</span> a cartdridge
+                </p>
+                <p class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                  Veuillez <span class="highlight">insérer</span> une cartouche
+                </p>
+              </div>
+            </div>
+
+            <div class="game-1">
+
+              <div class="left_part">
+
+                <video controls width = "320" height = "240">
+                  <source src = "assets/gameplay-videos/heavy-skits.mp4" type = "video/mp4">
+                </video>
+
+                <div class="game_pitch">
+                  <p class="english" style>
+                    You think you're funny? Prove it!<br>
+                    Heavy Skits is a game in which you have to make 
+                    <span class="highlight">jokes</span> represented by <span class="highlight">cards</span> to make different<br>
+                    characters laugh in a limited amount of time.
+                    Place the cards on the scale and watch their <span class="highlight">reaction</span>.
+                    But be careful! Each card has a weight.
+                    Place them according to <span class="highlight">how heavy</span> your audience likes their jokes!
+                  </p>
+                  <p class="french" style="display:none;">
+                    Tu crois être drôle ? Prouve-le !<br>
+                    Heavy Skits est un jeu dans lequel tu dois faire des <span class="highlight">blagues</span> 
+                    représentées par des <span class="highlight">cartes</span> pour faire rire différents personnages 
+                    dans un laps de temps limité. 
+                    Place les cartes sur la balance et observe leur <span class="highlight">réaction</span>. 
+                    Mais attention ! Chaque carte a un poids. 
+                    Place-les en fonction des <span class="highlight">goûts</span> de ton public !
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="right_part">
+                
+                <div class="project_presentation">
+
+                  <!-- Carousel -->
+                  <div class="carousel" data-carousel>
+
+                    <div class="slide-buttons_container">
+                      <button class="carousel-button prev" data-carousel-button="prev">
+                        <img class="arrow" src="assets/carousel_assets/icons8-triangle-up-100.png">
+                      </button>
+                      <button class="carousel-button next" data-carousel-button="next">
+                        <img class="arrow" src="assets/carousel_assets/icons8-triangle-down-100.png">
+                      </button>
+                    </div>
+
+                    <!-- Element to display current slide number -->
+                    <div class="slide-counter">1 / 1</div>
+
+                    <ul data-slides>
+                      <li class="slide" data-active>
+                        <div class="id-page">
+                          <div class="id_left-section">
+                            <p class="english" style>
+                              <span class="highlight">Genre</span><br>
+                              <span style="margin-left: 0.5rem;">Puzzle</span><br>
+                              <span class="highlight">Engine</span><br>
+                              <span style="margin-left: 0.5rem;">Unity</span><br>
+                              <span class="highlight">Team Size</span><br>
+                              <span style="margin-left: 0.5rem;">6 People</span><br>
+                              <span class="highlight">Production Time</span><br>
+                              <span style="margin-left: 0.5rem;">48 Hours</span><br>
+                            </p>
+                            <p class="french" style="display:none;">
+                              <span class="highlight">Genre</span><br>
+                              <span style="margin-left: 0.5rem;">Puzzle</span><br>
+                              <span class="highlight">Moteur</span><br>
+                              <span style="margin-left: 0.5rem;">Unity</span><br>
+                              <span class="highlight">Taille de l'équipe</span><br>
+                              <span style="margin-left: 0.5rem;">6 Personnes</span><br>
+                              <span class="highlight">Temps de Production</span><br>
+                              <span style="margin-left: 0.5rem;">48 Heures</span><br>
+                            </p>
+                          </div>
+                          <div class="id_right-section">
+                            <p class="english" style>
+                              <span class="highlight">Date</span><br>
+                              <span style="margin-left: 0.5rem;">January 2024</span><br>
+                              <span class="highlight">Platform</span><br>
+                              <span style="margin-left: 0.5rem;">PC; Smartphone</span><br>
+                              <span class="highlight">Roles & Responsibilities</span><br>
+                              <span style="margin-left: 0.5rem;">Game Design</span><br>
+                              <span style="font-size: smaller; font-weight: lighter; margin-left: 0.5rem;">Core Gameplay</span><br>
+                              <span style="margin-left: 0.5rem;">Sound</span><br>
+                              <span style="font-size: smaller; font-weight: lighter; margin-left: 0.5rem;">Sound Effects; Integration</span><br>
+                            </p>
+                            <p class="french" style="display:none;">
+                              <span class="highlight">Date</span><br>
+                              <span style="margin-left: 0.5rem;">Janvier 2024</span><br>
+                              <span class="highlight">Plateforme</span><br>
+                              <span style="margin-left: 0.5rem;">PC; Smartphone</span><br>
+                              <span class="highlight">Roles & Responsabilités</span><br>
+                              <span style="margin-left: 0.5rem;">Game Design</span><br>
+                              <span style="font-size: smaller; font-weight: lighter; margin-left: 0.5rem;">Core Gameplay</span><br>
+                              <span style="margin-left: 0.5rem;">Son</span><br>
+                              <span style="font-size: smaller; font-weight: lighter; margin-left: 0.5rem;">Effets Sonores; Intégration</span><br>
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="slide">
+                        <div class="slide-image_container">
+                          <img class="slide-image" src="assets/project_images/heavy-skits/screeshot-1.png">
+                        </div>
+                      </li>
+                      <li class="slide">
+                        <div class="slide-image_container">
+                          <img class="slide-image" src="assets/project_images/heavy-skits/screeshot-3.png">
+                        </div>
+                      </li>
+                    </ul>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="game-2">
+
+              <div class="left_part">
+
+                <video controls width = "320" height = "240">
+                  <source src = "assets/gameplay-videos/airship-city.mp4" type = "video/mp4">
+                </video>
+
+                <div class="game_pitch">
+                  <p class="english" style>
+                    In Airship City, the player takes on the role of a 
+                    captain in charge of a <span class="highlight">fleet of flying ships</span>.<br>
+                    They'll have to effectively utilize the sky's
+                    resources and <span class="highlight">leverage the weather</span> to their advantage, 
+                    allowing them to expand their fleet by acquiring new ships, 
+                    constructing various structures, and keeping it afloat.
+                  </p>
+                  <p class="french" style="display:none;">
+                    Dans Airship City, les joueurs incarnent le rôle d'un capitaine chargé 
+                    d'une <span class="highlight">flotte de vaisseaux volants</span>.
+                    Ils devront utiliser efficacement les ressources du ciel et 
+                    tirer avantage <span class="highlight">de la météo</span>, 
+                    ce qui leur permettra d'étendre leur flotte en acquérant de nouveaux navires et bâtiments, 
+                    tout en la maintenant en l'air.
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="right_part">
+                
+                <div class="project_presentation">
+
+                  <!-- Carousel -->
+                  <div class="carousel" data-carousel>
+
+                    <div class="slide-buttons_container">
+                      <button class="carousel-button prev" data-carousel-button="prev">
+                        <img class="arrow" src="assets/carousel_assets/icons8-triangle-up-100.png">
+                      </button>
+                      <button class="carousel-button next" data-carousel-button="next">
+                        <img class="arrow" src="assets/carousel_assets/icons8-triangle-down-100.png">
+                      </button>
+                    </div>
+
+                    <!-- Element to display current slide number -->
+                    <div class="slide-counter">1 / 1</div>
+
+                    <ul data-slides>
+                      <li class="slide" data-active>
+                        <div class="id-page">
+                          <div class="id_left-section">
+                            <p class="english" style>
+                              <span class="highlight">Genre</span><br>
+                              <span style="margin-left: 0.5rem;">City Builder</span><br>
+                              <span class="highlight">Engine</span><br>
+                              <span style="margin-left: 0.5rem;">Unity</span><br>
+                              <span class="highlight">Team Size</span><br>
+                              <span style="margin-left: 0.5rem;">4 People</span><br>
+                              <span class="highlight">Production Time</span><br>
+                              <span style="margin-left: 0.5rem;">6 Months</span><br>
+                            </p>
+                            <p class="french" style="display:none;">
+                              <span class="highlight">Genre</span><br>
+                              <span style="margin-left: 0.5rem;">City Builder</span><br>
+                              <span class="highlight">Moteur</span><br>
+                              <span style="margin-left: 0.5rem;">Unity</span><br>
+                              <span class="highlight">Taille de l'équipe</span><br>
+                              <span style="margin-left: 0.5rem;">4 Personnes</span><br>
+                              <span class="highlight">Temps de Production</span><br>
+                              <span style="margin-left: 0.5rem;">6 Mois</span><br>
+                            </p>
+                          </div>
+                          <div class="id_right-section">
+                            <p class="english" style>
+                              <span class="highlight">Date</span><br>
+                              <span style="margin-left: 0.5rem;">June 2023</span><br>
+                              <span class="highlight">Platform</span><br>
+                              <span style="margin-left: 0.5rem;">PC</span><br>
+                              <span class="highlight">Roles & Responsibilities</span><br>
+                              <span style="margin-left: 0.5rem;">Game Design</span><br>
+                              <span style="font-size: smaller; font-weight: lighter; margin-left: 0.5rem;">Core Gameplay; System Design; Balancing</span><br>
+                              <span style="margin-left: 0.5rem;">Sound</span><br>
+                              <span style="font-size: smaller; font-weight: lighter; margin-left: 0.5rem;">Sound Effects; Music; Integration</span><br>
+                            </p>
+                            <p class="french" style="display:none;">
+                              <span class="highlight">Date</span><br>
+                              <span style="margin-left: 0.5rem;">Juin 2023</span><br>
+                              <span class="highlight">Plateforme</span><br>
+                              <span style="margin-left: 0.5rem;">PC</span><br>
+                              <span class="highlight">Roles & Responsabilités</span><br>
+                              <span style="margin-left: 0.5rem;">Game Design</span><br>
+                              <span style="font-size: smaller; font-weight: lighter; margin-left: 0.5rem;">Core Gameplay; Systèmes; Équilibrage</span><br>
+                              <span style="margin-left: 0.5rem;">Son</span><br>
+                              <span style="font-size: smaller; font-weight: lighter; margin-left: 0.5rem;">Effets Sonores; Musique; Intégration</span><br>
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="slide">
+                        <div class="slide-text">
+                          <p class="english" style>
+                            This project was, for me, the occasion to work on 
+                            <strong>complex systems</strong>. The prototype is a proof of concept
+                            showcasing the main aspects of the project we imagine.
+                            We had roughly 2 days per week to work on the project, 
+                            so <strong>organization</strong> was very important to finish it.
+                          </p>
+                          <p class="french" style="display:none;">
+                            Ce projet a été, pour moi, l'occasion de travailler 
+                            sur des <strong>systèmes complexes</strong>. Le prototype est une démonstration 
+                            mettant en avant les principaux aspects du projet que nous imaginons. 
+                            Nous avions environ 2 jours par semaine pour travailler sur le projet, 
+                            donc l'<strong>organisation</strong> était un aspect à ne pas négliger.
+                          </p>
+                        </div>
+                      </li>
+                      <li class="slide">
+                        <div class="slide-text">
+                          <p class="english" style>
+                            Early on, we drew a timeline to know how the player would progress. 
+                            This document helped us during the game <strong>balancing</strong> phase, by making the concept more tangible. 
+                            Thanks to it, we had a better idea of the <strong>experience</strong> we wanted to offer.
+                          </p>
+                          <p class="french" style="display:none;">
+                            Au début du projet, nous avons dressé une chronologie pour savoir comment le joueur progresserait. 
+                            Ce document nous a aidés lors de la phase d'<strong>équilibrage</strong> du jeu, en rendant le concept plus tangible. 
+                            Grâce à lui, nous avions une meilleure idée de l'<strong>expérience</strong> que nous voulions offrir.
+                          </p>
+                        </div>
+                      </li>
+                      <li class="slide">
+                        <div class="slide-image_container">
+                          <img class="slide-image" src="assets/project_images/airship-city/gameplay-timeline_2.png">
+                        </div>
+                      </li>
+                      <li class="slide">
+                        <div class="slide-text">
+                          <p class="english" style>
+                            In "Airship City", the player has to deal with the weather, 
+                            which can be a precious <strong>ally</strong>, or a terrible <strong>foe</strong>. 
+                            We wanted to make the game as immersive as possible, so I spent some 
+                            time on FMOD to define some parameters to trigger specific ambiances and music at the appropriate time. 
+                            The sound was a good <strong>tool</strong> to highlight some features of the game.
+                          </p>
+                          <p class="french" style="display:none;">
+                            Dans "Airship City", le joueur doit composer avec la météo, 
+                            qui peut être un précieux <strong>allié</strong> ou un terrible <strong>ennemi</strong>. 
+                            Nous voulions rendre le jeu aussi immersif que possible, 
+                            alors j'ai passé du temps sur FMOD pour définir certains paramètres afin de déclencher 
+                            des ambiances spécifiques au moment approprié. 
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="game-3">
+
+              <div class="left_part">
+
+                <video controls width = "320" height = "240">
+                  <source src = "assets/gameplay-videos/dwc.mp4" type = "video/mp4">
+                </video>
+
+                <div class="game_pitch">
+                  <p class="english" style>
+                    Umizon is the best <span class="highlight">delivery service</span> there is on the planet today.
+                    As one of their best workers, use your skills to deliver your 
+                    next client's package as fast as possible, <span class="highlight">with care</span>!<br> 
+                    Use your client's package in order to navigate around the levels. 
+                    Throw it around to defeat your foes and catch it again to gain a double jump!
+                  </p>
+                  <p class="french" style="display:none;">
+                    De nos jours, Umizon est le meilleur <span class="highlight">service de livraison</span> au monde.
+                    En tant que l'un de leurs meilleurs employés, utilisez vos compétences pour livrer 
+                    le colis de votre prochain client le plus rapidement possible, <span class="highlight">avec soin</span> !<br>
+                    Utilisez le colis de votre client pour naviguer à travers les niveaux.
+                    Lancez-le pour vaincre vos ennemis et attrapez-le de nouveau pour effectuer un double saut !
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="right_part">
+                
+                <div class="project_presentation">
+
+                  <!-- Carousel -->
+                  <div class="carousel" data-carousel>
+
+                    <div class="slide-buttons_container">
+                      <button class="carousel-button prev" data-carousel-button="prev">
+                        <img class="arrow" src="assets/carousel_assets/icons8-triangle-up-100.png">
+                      </button>
+                      <button class="carousel-button next" data-carousel-button="next">
+                        <img class="arrow" src="assets/carousel_assets/icons8-triangle-down-100.png">
+                      </button>
+                    </div>
+
+                    <!-- Element to display current slide number -->
+                    <div class="slide-counter">1 / 1</div>
+
+                    <ul data-slides>
+                      <li class="slide" data-active>
+                        <div class="id-page">
+                          <div class="id_left-section">
+                            <p class="english" style>
+                              <span class="highlight">Genre</span><br>
+                              <span style="margin-left: 0.5rem;">2D Platformer</span><br>
+                              <span class="highlight">Engine</span><br>
+                              <span style="margin-left: 0.5rem;">Unity</span><br>
+                              <span class="highlight">Team Size</span><br>
+                              <span style="margin-left: 0.5rem;">4 People</span><br>
+                              <span class="highlight">Production Time</span><br>
+                              <span style="margin-left: 0.5rem;">72 Hours</span><br>
+                            </p>
+                            <p class="french" style="display:none;">
+                              <span class="highlight">Genre</span><br>
+                              <span style="margin-left: 0.5rem;">Platformer 2D</span><br>
+                              <span class="highlight">Moteur</span><br>
+                              <span style="margin-left: 0.5rem;">Unity</span><br>
+                              <span class="highlight">Taille de l'équipe</span><br>
+                              <span style="margin-left: 0.5rem;">4 Personnes</span><br>
+                              <span class="highlight">Temps de Production</span><br>
+                              <span style="margin-left: 0.5rem;">72 Heures</span><br>
+                            </p>
+                          </div>
+                          <div class="id_right-section">
+                            <p class="english" style>
+                              <span class="highlight">Date</span><br>
+                              <span style="margin-left: 0.5rem;">April 2023</span><br>
+                              <span class="highlight">Platform</span><br>
+                              <span style="margin-left: 0.5rem;">PC</span><br>
+                              <span class="highlight">Roles & Responsibilities</span><br>
+                              <span style="margin-left: 0.5rem;">Game Design</span><br>
+                              <span style="font-size: smaller; font-weight: lighter; margin-left: 0.5rem;">Core Gameplay</span><br>
+                              <span style="margin-left: 0.5rem;">Sound</span><br>
+                              <span style="font-size: smaller; font-weight: lighter; margin-left: 0.5rem;">Sound Effects; Music; Integration</span><br>
+                            </p>
+                            <p class="french" style="display:none;">
+                              <span class="highlight">Date</span><br>
+                              <span style="margin-left: 0.5rem;">Avril 2023</span><br>
+                              <span class="highlight">Plateforme</span><br>
+                              <span style="margin-left: 0.5rem;">PC</span><br>
+                              <span class="highlight">Roles & Responsabilités</span><br>
+                              <span style="margin-left: 0.5rem;">Game Design</span><br>
+                              <span style="font-size: smaller; font-weight: lighter; margin-left: 0.5rem;">Core Gameplay</span><br>
+                              <span style="margin-left: 0.5rem;">Son</span><br>
+                              <span style="font-size: smaller; font-weight: lighter; margin-left: 0.5rem;">Effets Sonores; Musique; Intégration</span><br>
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="slide">
+                        <div class="slide-text">
+                          <p class="english" style>
+                            The first step of the project was to <strong>organize</strong> our workflow. 
+                            Due to the time limit, we decided to use Figma for quick <strong>iteration</strong>. 
+                            Communication was simplified thanks to the board. In a few hours, we had our core gameplay and general aesthetic.
+                            To fit the theme of the jam, it was decided that the package would be central in the design.
+                          </p>
+                          <p class="french" style="display:none;">
+                            En raison de la limite de temps, nous avons décidé d'utiliser Figma pour des <strong>itérations</strong> rapides. 
+                            La communication a été simplifiée grâce au tableau. En quelques heures, nous avions notre gameplay de base et une esthétique générale. 
+                            Pour correspondre au thème de la compétition, il a été décidé que le colis serait central dans le design.
+                          </p>
+                        </div>
+                      </li>
+                      <li class="slide">
+                        <div class="slide-text">
+                          <p class="english" style>
+                            The package allows the character to perform <strong>special moves</strong> while not carried.
+                            However, if it touches the ground too many times, it's game over.
+                          </p>
+                          <p class="french" style="display:none;">
+                            Le colis permet au personnage d'effectuer des <strong>mouvements spéciaux</strong> lorsqu'il n'est pas porté. 
+                            Cependant, s'il touche le sol trop souvent, c'est la fin de la partie.
+                          </p>
+                        </div>
+                      </li>
+                      <li class="slide">
+                        <div class="slide-text">
+                          <p class="english" style>
+                            Thus, the package becomes an exceptionally versatile tool for players, 
+                            demanding <strong>strategic</strong>  utilization to successfully navigate and complete each level, 
+                            as well as for us, designers, who can leverage its versatility to create <strong>engaging</strong> and <strong>challenging</strong> scenarios.
+                          </p>
+                          <p class="french" style="display:none;">
+                            Ainsi, ce dernier devient un outil exceptionnellement polyvalent pour les joueurs, 
+                            exigeant une <strong>utilisation stratégique</strong> pour naviguer avec succès et terminer chaque niveau, 
+                            tout comme pour nous, les concepteurs, qui pouvons exploiter sa polyvalence pour créer des scénarios <strong>engageants</strong> et <strong>stimulants</strong>.
+                          </p>
+                        </div>
+                      </li>
+                      <li class="slide">
+                        <div class="slide-text">
+                          <p class="english" style>
+                            While designing the levels, focus was made on <strong>progressively</strong> introducing the mechanics to the player.
+                            As the player advances, the levels become more challenging. 
+                            In the remaining hours, our emphasis shifted to addressing as many level issues as possible, 
+                            taking into account the character's abilities.
+                          </p>
+                          <p class="french" style="display:none;">
+                            En concevant les niveaux, l'accent a été mis sur l'introduction <strong>progressive</strong> des mécaniques au joueur. 
+                            Au fur et à mesure que le joueur avance, les niveaux deviennent plus difficiles. 
+                            Dans les heures restantes, notre priorité a été de résoudre autant de bugs de niveaux que possible, 
+                            en tenant compte des capacités du personnage.
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="game-4">
+
+              <div class="left_part">
+
+                <video controls width = "320" height = "240">
+                  <source src = "assets/gameplay-videos/greedy-bubble.mp4" type = "video/mp4">
+                </video>
+
+                <div class="game_pitch">
+                  <p class="english" style>
+                    In this Bubble Catcher, the player controls an 
+                    underwater <span class="highlight">air bubble</span> that aims to get as <span class="highlight">rich</span> as possible.
+                    However, it must be careful not to be too <span class="highlight">greedy</span> 
+                    and avoid exploding while trying to achieve its goal!
+                  </p>
+                  <p class="french" style="display:none;">
+                    Dans ce Bubble Catcher, le joueur contrôle une 
+                    bulle d'air sous-marine qui a pour but de devenir aussi <span class="highlight">riche</span> que possible. 
+                    Cependant, elle devra veiller à ne pas être trop <span class="highlight">cupide</span> 
+                    et éviter d'exploser en essayant d'atteindre son objectif !
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="right_part">
+                
+                <div class="project_presentation">
+
+                  <!-- Carousel -->
+                  <div class="carousel" data-carousel>
+
+                    <div class="slide-buttons_container">
+                      <button class="carousel-button prev" data-carousel-button="prev">
+                        <img class="arrow" src="assets/carousel_assets/icons8-triangle-up-100.png">
+                      </button>
+                      <button class="carousel-button next" data-carousel-button="next">
+                        <img class="arrow" src="assets/carousel_assets/icons8-triangle-down-100.png">
+                      </button>
+                    </div>
+
+                    <!-- Element to display current slide number -->
+                    <div class="slide-counter">1 / 1</div>
+
+                    <ul data-slides>
+                      <li class="slide" data-active>
+                        <div class="id-page">
+                          <div class="id_left-section">
+                            <p class="english" style>
+                              <span class="highlight">Genre</span><br>
+                              <span style="margin-left: 0.5rem;">Bubble Catcher</span><br>
+                              <span class="highlight">Engine</span><br>
+                              <span style="margin-left: 0.5rem;">Unity</span><br>
+                              <span class="highlight">Team Size</span><br>
+                              <span style="margin-left: 0.5rem;">2 People</span><br>
+                              <span class="highlight">Production Time</span><br>
+                              <span style="margin-left: 0.5rem;">3 Hours</span><br>
+                            </p>
+                            <p class="french" style="display:none;">
+                              <span class="highlight">Genre</span><br>
+                              <span style="margin-left: 0.5rem;">Bubble Catcher</span><br>
+                              <span class="highlight">Moteur</span><br>
+                              <span style="margin-left: 0.5rem;">Unity</span><br>
+                              <span class="highlight">Taille de l'équipe</span><br>
+                              <span style="margin-left: 0.5rem;">2 Personnes</span><br>
+                              <span class="highlight">Temps de Production</span><br>
+                              <span style="margin-left: 0.5rem;">3 Heures</span><br>
+                            </p>
+                          </div>
+                          <div class="id_right-section">
+                            <p class="english" style>
+                              <span class="highlight">Date</span><br>
+                              <span style="margin-left: 0.5rem;">August 2023</span><br>
+                              <span class="highlight">Platform</span><br>
+                              <span style="margin-left: 0.5rem;">PC; Smartphone</span><br>
+                              <span class="highlight">Roles & Responsibilities</span><br>
+                              <span style="margin-left: 0.5rem;">Game Design</span><br>
+                              <span style="font-size: smaller; font-weight: lighter; margin-left: 0.5rem;">Core Gameplay; Balancing</span><br>
+                              <span style="margin-left: 0.5rem;">Sound</span><br>
+                              <span style="font-size: smaller; font-weight: lighter; margin-left: 0.5rem;">Sound Effects; Music; Integration</span><br>
+                            </p>
+                            <p class="french" style="display:none;">
+                              <span class="highlight">Date</span><br>
+                              <span style="margin-left: 0.5rem;">Août 2023</span><br>
+                              <span class="highlight">Plateforme</span><br>
+                              <span style="margin-left: 0.5rem;">PC; Smartphone</span><br>
+                              <span class="highlight">Roles & Responsabilités</span><br>
+                              <span style="margin-left: 0.5rem;">Game Design</span><br>
+                              <span style="font-size: smaller; font-weight: lighter; margin-left: 0.5rem;">Core Gameplay; Équilibrage</span><br>
+                              <span style="margin-left: 0.5rem;">Son</span><br>
+                              <span style="font-size: smaller; font-weight: lighter; margin-left: 0.5rem;">Effets Sonores; Musique; Intégration</span><br>
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="slide">
+                        <div class="slide-text">
+                          <p class="english" style>
+                            This game was produced in 3 hours, but we had more time to prepare the production.
+                            For the <strong>pre-production</strong> phase, I used Slides to <strong>communicate</strong> with the programmer.
+                            Emphasis was made on making a concept that could fit a very <strong>small scope</strong>, since we each had 3 hours to finish the project, 
+                            if we wanted to be eligible for rating.
+                          </p>
+                          <p class="french" style="display:none;">
+                            Ce jeu a été produit en 3 heures, mais nous avions plus de temps pour préparer la production. 
+                            Pour la phase de <strong>préproduction</strong>, j'ai utilisé Slides pour <strong>communiquer</strong> avec le programmeur. 
+                            L'accent a été mis sur la création d'un concept pouvant s'adapter à un <strong>projet de petite envergure</strong>. 
+                            Il était nécessaire de nous adapter si nous voulions accéder à la phase l'évaluation.
+                          </p>
+                        </div>
+                      </li>
+                      <li class="slide">
+                        <div class="slide-image_container">
+                          <img class="slide-image" src="assets/project_images/greedy-bubble/core-gameplay.jpg">
+                        </div>
+                      </li>
+                      <li class="slide">
+                        <div class="slide-text">
+                          <p class="english" style>
+                            The gameplay had to be as simple as possible. 
+                            Simple features to <strong>program</strong>, simple rules to explain, and simple parameters to <strong>balance</strong>. 
+                            The fewer elements we had to deal with, 
+                            the more we could focus on polish and making the game actually <strong>fun</strong> to play.
+                          </p>
+                          <p class="french" style="display:none;">
+                            Le gameplay devait être aussi simple que possible. 
+                            Des fonctionnalités simples à <strong>programmer</strong>, des règles simples à expliquer et des paramètres simples à <strong>équilibrer</strong>. 
+                            Moins d'éléments nous avions à gérer, plus nous pouvions nous concentrer sur le peaufinage et rendre le jeu réellement <strong>amusant</strong> à jouer.
+                          </p>
+                        </div>
+                      </li>
+                      <li class="slide">
+                        <div class="slide-text">
+                          <p class="english" style>
+                            While the programmer was developing the core features of the game, 
+                            I used a part of my three hours to pick SFX's and music to add <strong>juice</strong> to the game. 
+                            Once he had finished, I was able to use the rest of my time to balance some parameters. 
+                            It was a lot of trial and error to get something satisfying.
+                          </p>
+                          <p class="french" style="display:none;">
+                            Pendant que le programmeur développait les fonctionnalités de base du jeu, 
+                            j'ai utilisé une partie de mes trois heures pour choisir des sons pour ajouter du <strong>juice</strong> au jeu. 
+                            Une fois qu'il avait terminé, j'ai pu utiliser le reste de mon temps pour équilibrer certains paramètres. 
+                            C'était beaucoup d'essais et d'erreurs pour obtenir quelque chose de satisfaisant.
+                          </p>
+                        </div>
+                      </li>
+                      <li class="slide">
+                        <div class="slide-text">
+                          <p class="english" style>
+                            I asked the programmer to put some variables in public so it would be faster for me to 
+                            modify the <strong>feeling</strong> of the game, since it was directly in the engine.
+                            It was decided to make an endless game.
+                          </p>
+                          <p class="french" style="display:none;">
+                            J'ai demandé au programmeur de mettre certaines variables en public pour que je puisse 
+                            modifier plus rapidement le <strong>ressenti</strong> du jeu, directement dans le moteur. 
+                            Il a été décidé de faire un jeu infini.
+                          </p>
+                        </div>
+                      </li>
+                      <li class="slide">
+                        <div class="slide-text">
+                          <p class="english" style>
+                            The more you play, the more it becomes difficult to avoid harpoons and collect coins. 
+                            I do believe a valuable addition to this system would have been a scoreboard, 
+                            providing additional motivation for the most dedicated players.
+                          </p>
+                          <p class="french" style="display:none;">
+                            Plus vous jouez, plus il devient difficile d'éviter les harpons et de collecter des pièces. 
+                            Je crois qu'un bon ajout à ce système aurait été un tableau des scores, 
+                            offrant une motivation supplémentaire aux personnes les plus dévouées.
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        </div>
+
+      </div>
+      </div>
+    </section>
+
+    <!-- Contact Section-->
+    <section id="contact">
+      <div class="contact_container">
+        <div class="contact_top">
+
+          <div class="contact-title_container">
+            <div class="contact_title">
+              <h2 class="english" style>CONTACT</h2>
+              <h2 class="french" style="text-align: center; margin-bottom: 3rem; display:none;">
+                CONTACT
+              </h2>
+    
+              <div class="contact_title_line"></div>
+              
+            </div>
+          </div>
+
+          <div class="contact-social_icons">
+            <a class="mail-button" href="mailto: l.edoh@outlook.com" target="_blank">
+              <img class="mail" src="assets/social_icons/icons8-message-100.png">
+            </a>
+
+            <a class="itch-button" href="https://en-ra.itch.io/" target="_blank">
+              <img class="itch" src="assets/social_icons/icons8-itch-io-100.png">
+            </a>
+
+            <a class="linked-in-button" href="https://www.linkedin.com/in/lo%C3%AFc-edoh-3798aa196/" target="_blank">
+              <img class="linked-in" src="assets/social_icons/icons8-linkedin-100.png">
+            </a>
+          </div>
+
+        </div>
+        
+          <div class="english" style>
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="ba5fc664-6fb5-4702-818b-b686d25e02b7">
+              <input type="text" name="name" placeholder="Your name..." autocomplete="off" required>
+              <input type="text" name="email" placeholder="Your e-mail Adress..." autocomplete="off" required>
+              <textarea rows="5" cols="60" name="message" placeholder="Your Message..." autocomplete="off" required></textarea>
+              <button class="submit_button" type="submit">Submit</button>
+            </form>
+          </div>
+  
+          <div class="french" style="display:none;">
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="ba5fc664-6fb5-4702-818b-b686d25e02b7">
+              <input type="text" name="name" placeholder="Votre Nom..." autocomplete="off" required>
+              <input type="text" name="email" placeholder="Votre adresse e-mail..." autocomplete="off" required>
+              <textarea rows="5" cols="60" name="message" placeholder="Votre Message..." autocomplete="off" required></textarea>
+              <button class="submit_button" type="submit">Envoyer</button>
+            </form>
+        </div>
+
+        <div class="icons-source_container">
+          <p class="icons-source">
+            <span style="color: white; font-size: 1rem;">Icons by </span>
+            <a target="_blank" href="https://icons8.com">
+              <span style="color: white; font-size: 1rem;">Icons8</span>
+            </a>
+        </div>
+
+      </div>
+
+    </section>
+
+  </body>
+</html>
