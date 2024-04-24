@@ -1,6 +1,7 @@
+
 .console{
-  width: 70%;
-  height: 100%;
+  width: 100%;
+  height: 70%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -9,7 +10,7 @@
 
 .games { 
   width: 100%;
-  height: 80%;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -22,7 +23,6 @@
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  background-color: RGB(255, 255, 255);
 }
 
 
@@ -31,15 +31,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 0.5vh;
   width: 9rem;
-  height: 9rem;
-  padding: 0.5em;
+  height: 8rem;
+  padding: 0.5rem;
   background-color: #B0B0B0;
   font: inherit;
   border-radius: 1.5rem 1.5rem 0 0;
   border: none;
-  box-shadow: 1rem 0.5rem 0.5rem rgba(0, 0, 0, 0.25);
 }
 
 /* Define the bounce animation */
@@ -48,38 +47,38 @@
     transform: translateY(0);
   }
   20% {
-    transform: translateY(100px);
+    transform: translateY(88px);
   }
   40% {
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   60% {
-    transform: translateY(100px);
+    transform: translateY(88px);
   }
   80% {
-    transform: translateY(60px);
+    transform: translateY(40px);
   }
   90% {
-    transform: translateY(100px);
+    transform: translateY(88px);
   }
   80% {
-    transform: translateY(80px);
+    transform: translateY(62px);
   }
   90% {
-    transform: translateY(100px);
+    transform: translateY(88px);
   }
   95% {
-    transform: translateY(95px);
+    transform: translateY(70px);
   }
   100% {
-    transform: translateY(100px);
+    transform: translateY(88px);
   }
 }
 
 /* Define the return animation */
 @keyframes return {
   0% {
-    transform: translateY(100px); /* Start position */
+    transform: translateY(91px); /* Start position */
   }
   100% {
     transform: translateY(0); /* Initial position */
@@ -105,8 +104,8 @@
 }
 
 .game-title{
-  color: white;
-  font-size: 0.9rem;
+  color: rgb(255, 255, 255);
+  font-size: 1.3vw;
   margin-top: 2%;
   display: flex;
   align-items: center;
@@ -153,13 +152,13 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: black; /* Black background */
+  background-color: black;
 }
 
 .neutral-message {
-  color: white; /* White text */
-  font-size: 24px; /* Adjust the font size as needed */
-  text-align: center; /* Center align the text */
+  color: white;
+  font-size: 24px;
+  text-align: center;
 }
 
 /* Hide preexisting game bodies */
@@ -214,23 +213,22 @@
   align-items: center;
   justify-content: space-evenly;
   gap: 0.5rem;
-  width: 50vh;
-  height: 60vh;
+  width: 35rem;
+  height: 80%;
 }
 .right_part{
   position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  width: 80vh;
-  height: 60vh;
+  width: 35rem;
+  height: 80%;
 }
 
 video{
   position: relative;
-  width: 100%;
+  width: 47%;
   height: 45%;
-  border-radius: 1rem;
 }
 
 .game_pitch{
@@ -240,21 +238,17 @@ video{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  min-height: 45%;
-  background-color: black;
-  color: white;
-  border-radius: 1rem;
+  width: 80%;
+  height: 45%;
 }
 .game_pitch p{
   padding: 0.5rem;
   flex-direction: column;
-  color: white;
-  font-size: 0.7rem;
+  font-size: 20px;
   line-height: 1.5rem;
 }
 .game_pitch .highlight{
-  font-size: 0.7rem;
+  font-size: 18px;
 }
 
 .project_presentation{
@@ -264,7 +258,7 @@ video{
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 95%;
+  height: 100%;
   background-color: black;
   border-radius: 1rem;
 }

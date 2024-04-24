@@ -2,17 +2,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 9vh;
-  opacity: 80%;
+  width: 100%;
   position: sticky;
   top: 0px;
   background-color: black;
-  box-shadow: 0 0 1rem black;
   z-index: 100;
+  box-shadow: 0 0 0.5rem white;
 }
 
 li{
   list-style: none;
+}
+.navbar a{
+  color: white;
+  font-size: calc(0.5rem + 2vw);
+}
+.navbar a:visited{
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.navbar a:hover{
+  color: white;
+  text-shadow: 0 0 0.25rem #ffffff;
 }
 a{
   color: white;
@@ -31,14 +43,14 @@ a:hover{
 nav ul{
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  padding: 1.5rem;
+  gap: 3vw;
+  padding: 2vw;
   position: fixed;
   left: -100%;
   top: 8%;
-  background-color: rgba(0, 0, 0, 80);
-  transition: 0.3s;
+  background-color: rgba(0, 0, 0, 1);
   border-radius: 0 0 1rem 0;
+  transition: 0.3s;
 }
 
 nav.active ul{
@@ -52,7 +64,7 @@ nav.active ul{
   height: 100%;
 }
 .menu_icon{
-  width: 3vw;
+  width: 4vw;
 }
 .menu_button{
   margin-left: 2vw;
@@ -80,12 +92,12 @@ nav.active ul{
 .name{
   color: white;
   font-weight: bold;
-  font-size: calc(0.5rem + 1vw);
+  font-size: 1.5vw;
 }
 .subtitle{
   color: white;
   font-weight: light;
-  font-size: calc(0.5rem + 0.6vw);
+  font-size: 1vw;
 }
 
 .right-section{
@@ -96,7 +108,7 @@ nav.active ul{
 }
 
 .language-slider{
-  margin-left: 20vw;
+  margin-left: 22vw;
   width: max-content;
   display: flex;
   align-items: center;
@@ -106,14 +118,14 @@ nav.active ul{
 .language-indicator{
   position: absolute;
   display: flex;
-  gap: 6rem;
+  gap: 5rem;
 }
 .english-indicator{
-  width: 2vw;
+  width: 3vw;
   color: #54AFE4;
 }
 .french-indicator{
-  width: 2vw;
+  width: 3vw;
   color: white;
 }
 

@@ -5,7 +5,8 @@
   --title2-font-size: 1.25rem;
   --title3-font-size: 1rem;
   --border-radius-factor: 0.5;
-  
+  background-color: black;
+
   .highlight {
     color: #F59E2A;
     font-size: (--base-font-size);
@@ -17,11 +18,11 @@
   width: .5rem;
 }
 ::-webkit-scrollbar-thumb{
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 1rem;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 *{
@@ -41,16 +42,12 @@
 }
 
 .about_container{
-  top: 4rem;
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  padding: 2rem;
-  width: 90%;
-  height: 90%;
-  border-radius: 3rem;
-  background-color: black;
-  box-shadow: 0.5rem 0.5rem 1rem black;
+  width: 100%;
+  height: 100%;
+  gap: 10vw;
 }
 
 /* TITLE SECTION */
@@ -78,11 +75,11 @@
 /* INFO SECTION */
 .info_container{
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  top: 4rem;
+  gap: 5vw;
 }
 /* END OF INFO SECTION */
 
@@ -173,10 +170,9 @@
 }
 /* END OF PHOTO & ICONS SECTION */
 
-/* SKILLS & EXPERIENCE SECTION */
-.skills-experience_container{
+/* END OF SKILLS, EXPERIENCE & EDUCATION SECTION */
+.skills-experience-education_container{
   height: max-content;
-  margin-top: 10rem;
   margin-left: auto;
   margin-right: auto;
   width: 90%;
@@ -185,7 +181,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: top;
-  gap: 2rem;
+  gap: 3vw;
 }
 
 .skills_container{
@@ -314,7 +310,7 @@
 
 .experience_container{
   height: max-content;
-  width: max-content;
+  width: 32rem;
   border-radius: 1rem;
 }
 .experience_title h3{
@@ -353,179 +349,9 @@
   line-height: 1.25rem;
   color: white;
 }
-/* END OF SKILLS & EXPERIENCE SECTION */
-
-/* LANG TRAVELS EDUCATION SECTION */
-.languages-travels-education_container{
-  margin-top: 6rem;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  width: 90%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-.languages_container{
-  height: max-content;
-  flex-wrap: wrap;
-  border-radius: 1rem;
-  background-color: white;
-}
-.languages_title_container{
-  width: max-content;
-}
-.languages_title h3{
-  position: relative;
-  padding: 1rem;
-  font-size: var(--title2-font-size);
-  color: black;
-}
-.languages_title_line{
-  position: relative;
-  top: -1.25rem;
-  left: 1.05rem;
-  width: 1.2rem;
-  height: 0.15rem;
-  border-radius: calc(0.5rem * var(--border-radius-factor));
-  background-color: black;
-}
-.spoken-languages{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  padding: 1rem;
-  gap: 2rem;
-}
-.lang-1{
-  align-items: center;
-  display: flex;
-  gap: 2rem;
-}
-.lang-2{
-  align-items: center;
-  display: flex;
-  gap: 2rem;
-}
-.lang-3{
-  align-items: center;
-  display: flex;
-  gap: 2rem;
-}
-.lang-4{
-  align-items: center;
-  display: flex;
-  gap: 2rem;
-}
-
-.travels_container{
-  width: 25rem;
-  display: flex;
-  flex-wrap: wrap;
-  border-radius: 1rem;
-  background-color: white;
-}
-.travels_title_container{
-  width: max-content;
-}
-.travels_title h3{
-  position: relative;
-  padding: 1rem;
-  font-size: var(--title2-font-size);
-  color: black;
-}
-.travels_title_line{
-  position: relative;
-  top: -1.25rem;
-  left: 1.05rem;
-  width: 1.2rem;
-  height: 0.15rem;
-  border-radius: calc(0.5rem * var(--border-radius-factor));
-  background-color: black;
-}
-.destinations{
-  align-items: center;
-  justify-content: space-evenly;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 1rem;
-  gap: 1.5rem;
-}
-.destination-1{
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.destination-2{
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.destination-3{
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.destination-4{
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.destination-5{
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.destination-6{
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.destination-7{
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.destination-8{
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.destination-9{
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.destination-10{
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.destination-11{
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.destination-12{
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
 
 .education_container{
+  width: 32rem;
   border-radius: 1rem;
   display: flex;
   flex-wrap: wrap;
@@ -565,76 +391,16 @@
   line-height: 1.5rem;
   color: white;
 }
-/* END OF LANG TRAVELS EDUCATION SECTION */
-
-/* HOBBIES SECTION */
-.hobbies_container{
-  display: flex;
-  flex-wrap: wrap;
-  width: 80%;
-  margin-top: 6rem;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  background-color: white;
-  border-radius: 1rem;
-}
-.hobbies_title_container{
-  width: max-content;
-}
-.hobbies_title h3{
-  position: relative;
-  padding: 1rem;
-  font-size: var(--title2-font-size);
-  color: black;
-}
-.hobbies_title_line{
-  position: relative;
-  top: -1.25rem;
-  left: 1.05rem;
-  width: 1.2rem;
-  height: 0.15rem;
-  border-radius: calc(0.5rem * var(--border-radius-factor));
-  background-color: black;
-}
-.hobbies_icons{
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 8rem;
-  padding-bottom: 2rem;
-  justify-content: center;
-  gap: 3rem;
-}
-.video-games{
-  width: 5rem;
-}
-.cinema{
-  width: 5rem;
-}
-.guitar{
-  width: 5rem;
-}
-.music{
-  width: 5rem;
-}
-.workout{
-  width: 5rem;
-}
-.martial-arts{
-  width: 5rem;
-}
-/* END OF HOBBIES SECTION */
-
+/* END OF SKILLS, EXPERIENCE & EDUCATION SECTION */
 
 
 /* --- END OF ABOUT SECTION STYLES ---*/
 
 /* --- PROJECTS SECTION STYLES ---*/
 #games{
-  margin-top: 30rem;
+  margin-top: 50vh;
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -643,6 +409,7 @@
 
 /* --- CONTACT SECTION STYLES ---*/
 #contact{
+  margin-top: 15vh;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -652,25 +419,23 @@
 
 .contact_container{
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   flex-direction: column;
-  margin-top: 30rem;
   position: relative;
-  padding: 2rem;
   justify-content: center;
-  width: 100%;
-  height: 100%;
-  border-radius: 3rem 3rem 0 0;
-  background-color: black;
-  box-shadow: 0.5rem 0.5rem 1rem black;
+  align-items: center;
+  width: max-content;
+  height: max-content;
 }
 
 /* TITLE SECTION */
 .contact_top{
-  margin-top: 2%;
+  margin-top: 4%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 35vw;
 }
 .contact-title_container{
   position: relative;
@@ -760,13 +525,15 @@ textarea:focus-within{
 /* END OF CONTACT SECTION */
 
 .icons-source_container{
-  width: max-content;
+  width: 11rem;
   top: 8%;
-  left: 84%;
+  margin-left: 80%;
   position: relative;
   display: flex;
-  flex-direction: row;
   color: white;
+}
+.icons-source{
+  width: 100%;
 }
 
 /* --- END OF CONTACT SECTION STYLES ---*/
