@@ -225,28 +225,47 @@
   height: 80%;
 }
 
-video{
-  position: relative;
-  width: 47%;
-  height: 45%;
+video {
+  width: 40%;
+  height: auto; /* To maintain aspect ratio */
+  max-width: 100%; /* Ensure video doesn't exceed container */
+  max-height: 70vh; /* Limit video height */
+  min-width: 35vw; /* Minimum width for video */
+  min-height: 150px; /* Minimum height for video */
+  z-index: 70;
 }
 
-.game_pitch{
+.project_intro {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 80%;
+  width: 80%;
+}
+
+.game_pitch {
   position: relative;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  height: 45%;
+  width: 50%;
+  height: auto;
+  max-width: 80%; /* Maximum width for pitch */
+  min-width: 30rem; /* Minimum width for pitch */
+  max-height: 200vh; /* Limit pitch height */
 }
-.game_pitch p{
+
+.game_pitch p {
   padding: 0.5rem;
-  flex-direction: column;
   font-size: 20px;
-  line-height: 1.5rem;
+  line-height: 2rem;
+  width: 100%;
 }
+
 .game_pitch .highlight{
   font-size: 18px;
 }
@@ -260,13 +279,13 @@ video{
   width: 100%;
   height: 100%;
   background-color: black;
-  border-radius: 1rem;
 }
 
 /* Carousel */
 .carousel{
   position: relative;
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -288,13 +307,23 @@ video{
   opacity: 1;
 }
 
-.slide > img{
-  display: block;
-  width: 100%;
-  height: 100%;
+.slide > img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: cover;
   object-position: center;
 }
+
+.slide-image_container img {
+  max-width: 80%;
+  max-height: 80%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+}
+
 
 .carousel ul{
   margin: 0;
@@ -307,7 +336,8 @@ video{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  gap: 45vh;
+  gap: 60vh;
+  z-index: 80;
 }
 
 .carousel button{
@@ -336,10 +366,11 @@ video{
 }
 
 .slide-counter {
-  position: absolute;
-  top: -11rem;
-  right: 2rem;
+  position: relative;
+  top: -45%;
+  right: -45%;
   color: white;
+  z-index: 98;
 }
 
 /* Pages setup */
