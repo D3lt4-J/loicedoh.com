@@ -1,7 +1,26 @@
 // Toggling menu
 menu_icons.addEventListener("click", () => {
-  nav.classList.toggle("active");
-})
+    nav.classList.toggle("active");
+  });
+  
+  // Get all the navigation links
+  const navLinks = document.querySelectorAll('.navbar ul li a');
+  
+  // Add event listener to each link
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('active');
+    });
+  });
+  
+  // Add event listener to hide menu when clicking outside of it
+  document.body.addEventListener('click', (event) => {
+    // Check if the clicked element is not inside the navigation menu
+    if (!event.target.closest('.navbar')) {
+      nav.classList.remove('active');
+    }
+  });  
+  
 
 // Get all video elements
 const videos = document.querySelectorAll('video');
@@ -98,7 +117,7 @@ document.querySelectorAll(".carousel").forEach(carousel => {
     // Function to update slide counter
     function updateSlideCounter(currentIndex) {
       const currentSlideNumber = currentIndex + 1;
-      slideCounter.innerHTML = `<span style="color: #F59E2A; font-weight: bold">${currentSlideNumber}</span> / ${totalSlides}`;
+      slideCounter.innerHTML = `<span style="font-size: 1.5vh; color: #F59E2A; font-weight: bold">${currentSlideNumber}</span> / ${totalSlides}`;
     }
   });
   

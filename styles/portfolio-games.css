@@ -105,7 +105,8 @@
 
 .game-title{
   color: rgb(255, 255, 255);
-  font-size: 1.3vw;
+  font-size: 1rem;
+  font-weight: 600;
   margin-top: 2%;
   display: flex;
   align-items: center;
@@ -157,8 +158,13 @@
 
 .neutral-message {
   color: white;
-  font-size: 24px;
   text-align: center;
+}
+.neutral-message p{
+  font-size: 2vh;
+}
+.neutral-message .highlight{
+  font-size: 2vh;
 }
 
 /* Hide preexisting game bodies */
@@ -255,19 +261,19 @@ video {
   width: 50%;
   height: auto;
   max-width: 80%; /* Maximum width for pitch */
-  min-width: 30rem; /* Minimum width for pitch */
+  min-width: 36rem; /* Minimum width for pitch */
   max-height: 200vh; /* Limit pitch height */
 }
 
 .game_pitch p {
   padding: 0.5rem;
-  font-size: 20px;
-  line-height: 2rem;
+  font-size: 1.8vh;
+  line-height: 3vh;
   width: 100%;
 }
 
 .game_pitch .highlight{
-  font-size: 18px;
+  font-size: 1.8vh;
 }
 
 .project_presentation{
@@ -367,12 +373,15 @@ video {
 
 .slide-counter {
   position: relative;
-  top: -45%;
-  right: -45%;
+  top: -30vh;
+  right: -40vw;
   color: white;
   z-index: 98;
+  font-size: 1.5vh;
 }
-
+.slide-counter .highlight{
+  font-size: 1.5vh;
+}
 /* Pages setup */
 .id-page{
   width: 100%;
@@ -386,11 +395,13 @@ video {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  line-height: 5vh;
 }
 .id_right-section{
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  line-height: 5vh;
 }
 
 .slide-image_container {
@@ -411,7 +422,7 @@ video {
   justify-content: center;
 }
 .slide-text p{
-  font-size: 1rem;
+  font-size: 2vh;
   position: relative;
   flex-wrap: wrap;
   flex-direction: column;
@@ -422,5 +433,8 @@ video {
   background-color: black;
   color: white;
   border-radius: 1rem;
-  line-height: 2rem;
+  line-height: 4vh;
+}
+.slide-text strong{
+  font-size: 2vh;
 }

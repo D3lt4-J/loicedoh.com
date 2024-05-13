@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  height: 10vh;
   position: sticky;
   top: 0px;
   background-color: black;
@@ -15,7 +16,7 @@ li{
 }
 .navbar a{
   color: white;
-  font-size: calc(0.5rem + 2vw);
+  font-size: calc(0.5rem + 2vh);
 }
 .navbar a:visited{
   color: white;
@@ -26,16 +27,16 @@ li{
   color: white;
   text-shadow: 0 0 0.25rem #ffffff;
 }
-a{
+ul a{
   color: white;
   font-size: calc(0.5rem + 1vw);
 }
-a:visited{
+ul a:visited{
   color: white;
   text-decoration: none;
   text-transform: uppercase;
 }
-a:hover{
+ul a:hover{
   color: white;
   text-shadow: 0 0 0.25rem #ffffff;
 }
@@ -47,7 +48,7 @@ nav ul{
   padding: 2vw;
   position: fixed;
   left: -100%;
-  top: 8%;
+  top: 7%;
   background-color: rgba(0, 0, 0, 1);
   border-radius: 0 0 1rem 0;
   transition: 0.3s;
@@ -64,7 +65,8 @@ nav.active ul{
   height: 100%;
 }
 .menu_icon{
-  width: 4vw;
+  width: 4vh;
+  min-width: 50px;
 }
 .menu_button{
   margin-left: 2vw;
@@ -92,12 +94,12 @@ nav.active ul{
 .name{
   color: white;
   font-weight: bold;
-  font-size: 1.5vw;
+  font-size: 30px;
 }
 .subtitle{
   color: white;
   font-weight: light;
-  font-size: 1vw;
+  font-size: 20px;
 }
 
 .right-section{
@@ -108,7 +110,7 @@ nav.active ul{
 }
 
 .language-slider{
-  margin-left: 22vw;
+  margin-left: 18vw;
   width: max-content;
   display: flex;
   align-items: center;
@@ -121,17 +123,23 @@ nav.active ul{
   gap: 5rem;
 }
 .english-indicator{
-  width: 3vw;
+  width: max-content;
   color: #54AFE4;
 }
+.english-indicator p{
+  font-size: 30px;
+}
 .french-indicator{
-  width: 3vw;
+  width: max-content;
   color: white;
+}
+.french-indicator p{
+  font-size: 30px;
 }
 
 label img{
   position: absolute;
-  width: 1.5rem;
+  width: 2rem;
   z-index: 99;
 }
 .eng-flag{
@@ -154,9 +162,9 @@ input:checked + label img.fr-flag{
 
 label{
   display: block;
-  background-color: #ffffff;
-  width: 3rem;
-  height: 1.5rem;
+  /*background-color: #ffffff;*/
+  width: 3.5rem;
+  height: 2rem;
   border-radius: 1rem;
   cursor: pointer;
   position: relative;
@@ -169,8 +177,8 @@ label:after{
   content: '';
   background-color: #54AFE4;
   opacity: 80%;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: 1rem;
   margin: 0px;
   transition: .5s;
