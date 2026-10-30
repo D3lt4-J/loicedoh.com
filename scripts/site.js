@@ -100,7 +100,7 @@
     $('#loaded-name').textContent=active?name(active):(lang==='fr'?'Aucune cartouche insérée':'No cartridge inserted');
     try {localStorage.setItem('portfolio-language',lang);} catch (_) {}
   }
-  document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>language(b.dataset.lang)));
+  document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>language(lang==='fr'?'en':'fr')));
   let preferred=navigator.language.toLowerCase().startsWith('fr')?'fr':'en';
   try {preferred=localStorage.getItem('portfolio-language')||preferred;} catch (_) {}
   const form=$('#contact-form'), result=$('#contact-result');

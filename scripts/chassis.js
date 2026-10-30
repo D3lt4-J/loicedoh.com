@@ -19,7 +19,7 @@
   float diffuse=max(dot(n,l),0.);float rim=max(dot(n,r),0.);
   float spec=pow(max(dot(n,normalize(l+view)),0.),mix(22.,85.,F));
   float spec2=pow(max(dot(n,normalize(r+view)),0.),46.);
-  float grain=(hash(floor(P.xy*2.2))-.5)*.032+(hash(floor(P.xy*7.))-.5)*.017;
+  float grain=(hash(floor(P.xy*2.2))-.5)*.019+(hash(floor(P.xy*7.))-.5)*.011;
   float vertical=clamp(P.y/dimensions.y,0.,1.);
   vec3 light=C*(.62+diffuse*.56+rim*.13)+grain;
   light+=vec3(.78,.84,.94)*spec*(.12+F*.42);
@@ -30,6 +30,9 @@
   light+=bevel*(.10+max(-n.y,0.)*.26+max(-n.x,0.)*.15)*vec3(.78,.84,.94);
   light+=bevel*max(n.x,0.)*.13*vec3(1.,.78,.56);
   float wash=.93+.14*exp(-length(P.xy/dimensions-vec2(.12,.05))*2.5);
+  // Broad cool key and warm edge reflection, restrained on the flat face.
+  light+=vec3(.025,.035,.055)*exp(-pow((P.x/dimensions.x-.10)*4.,2.));
+  light+=vec3(.055,.036,.024)*exp(-pow((P.x/dimensions.x-.98)*8.,2.));
   light*=wash*(1.-vertical*.12);
   gl_FragColor=vec4(light,1.);}`;
   function shader(type,source){const s=gl.createShader(type);gl.shaderSource(s,source);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(s));return s;}
@@ -69,7 +72,7 @@
       const aa=bounds(y0),bb=bounds(y1);for(let i=0;i<aa.length-1;i+=2)quad([aa[i],y0,z],[aa[i+1],y0,z],[bb[i+1],y1,z],[bb[i],y1,z],color);
     }
   }
-  const graphite=[.125,.132,.147],edge=[.27,.28,.30],rubber=[.025,.03,.037];
+  const graphite=[.105,.111,.124],edge=[.23,.24,.26],rubber=[.025,.03,.037];
   function recess(q,depth,kind){
     ring(q,0,inset(q,2),-1,[.32,.31,.34],.35);
     ring(inset(q,2),-1,inset(q,4),-3,[.055,.06,.07],.35);
@@ -94,10 +97,14 @@
     const rect=(selector,r=6)=>{const b=shell.querySelector(selector).getBoundingClientRect();return {x:b.left-bounds.left,y:b.top-bounds.top,w:b.width,h:b.height,r};};
     const outside={x:2,y:0,w:W-4,h:H,r:W<600?24:31};
     ring(inset(outside,2),-16,outside,-8,[.055,.065,.08],.35);
-    ring(outside,-8,inset(outside,2),-3,edge,.7);
-    ring(inset(outside,2),-3,inset(outside,5),-1,[.28,.29,.31],.6);
-    ring(inset(outside,5),-1,inset(outside,10),0,[.21,.22,.24],.45);
-    ring(inset(outside,10),0,inset(outside,12),0,graphite,.1);
+    // A rolled edge with eight changing normals catches the soft key light.
+    // Concentric geometry stays continuous at every responsive size.
+    for(let i=0;i<8;i++){
+      const a=i/8*Math.PI/2,b=(i+1)/8*Math.PI/2;
+      ring(inset(outside,1+10*(1-Math.cos(a))),-8+8*Math.sin(a),
+           inset(outside,1+10*(1-Math.cos(b))),-8+8*Math.sin(b),edge,.52);
+    }
+    ring(inset(outside,11),0,inset(outside,12),0,graphite,.1);
     const face=inset(outside,12),module=rect('.cartridge-module');
     const cheek=parseFloat(getComputedStyle(shell.querySelector('.cartridge-module')).getPropertyValue('--cheek'));
     const tray={x:module.x+cheek-3,y:module.y+7,w:module.w-cheek*2+6,h:module.h-27,r:6};
