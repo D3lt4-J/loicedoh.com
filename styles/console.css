@@ -1,0 +1,254 @@
+/* Physical console construction. Dimensions derive from the approved product render. */
+:root{--cart-width:238px;--cart-height:147px;--bay:262px;--travel:22px;--accent:#c5aff2;--grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170' height='170'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23g)' opacity='.16' d='M0 0h170v170H0z'/%3E%3C/svg%3E")}
+html{height:auto;min-height:100%;overflow-x:hidden;overflow-y:auto}body{height:auto;min-height:100dvh;overflow:visible;background:radial-gradient(ellipse at 30% 0,#34363b 0,transparent 65%),linear-gradient(#171a1d,#0e1013);color:#eee9f5}
+.workspace{width:100%;max-width:1160px;margin:auto;padding:28px 20px 30px;height:max(100dvh,790px);min-height:790px}
+.equipment{position:relative;isolation:isolate;padding:14px 26px 25px;border:0;border-radius:36px;background:var(--grain),linear-gradient(115deg,#454850,#26292e 8%,#25262a 91%,#514b48);box-shadow:0 10px 0 -3px #07090b,0 20px 25px #000b,12px 6px 24px #0005;min-height:0}
+.equipment::before{content:'';position:absolute;inset:0;z-index:0;opacity:1;border-radius:36px;border:1px solid #9d9b9c;background:none;box-shadow:inset 0 3px 2px #dddce055,inset 5px 0 4px #85878f55,inset -5px 0 3px #8a7e7444,inset 0 -9px 4px #080a0d;pointer-events:none}
+.equipment::after{content:'';position:absolute;inset:7px 9px 10px;z-index:0;border-radius:29px;border:1px solid #b4abb433;background:none;box-shadow:inset 0 2px 2px #000a,0 1px 1px #8e879044;pointer-events:none}
+.cartridge-module,.monitor{position:relative;z-index:1}
+.cartridge-module{display:grid;grid-template-columns:64px minmax(0,1fr) 64px;gap:0;flex:none;padding:0;border:0;border-radius:21px 21px 6px 6px;background:var(--grain),linear-gradient(110deg,#383d44,#272a2f 10%,#26282c 88%,#494540);box-shadow:none;isolation:isolate}
+.cartridge-module::before{content:'';position:absolute;inset:0 62px 14px;height:auto;z-index:0;opacity:1;border-radius:8px 8px 0 0;clip-path:none;border:1px solid #080a0c;background:linear-gradient(#020405 0,#0c0e11 10px,#101317 25%,#0a0d10 90%);box-shadow:inset 0 7px 8px #000,0 -1px 0 #a0999e99,0 1px 0 #8e849255;pointer-events:none}
+.cartridge-module::after{content:'';position:absolute;left:62px;right:62px;bottom:13px;height:18px;z-index:1;transform:perspective(300px) rotateX(30deg);background:linear-gradient(#393a40,#05080b 55%);border:1px solid #82798555;border-radius:0;pointer-events:none}
+.rack-window{position:relative;isolation:isolate;z-index:2;width:100%;min-width:0;justify-self:stretch;background:none!important;box-shadow:none!important;border-radius:0}
+.cartridge-rack{display:flex;gap:0;position:relative;height:144px;padding:10px 10px 0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;background:none}
+.cartridge-rack::-webkit-scrollbar{display:none}.cartridge-slot{flex:0 0 var(--bay);width:var(--bay);height:134px;position:relative;scroll-snap-align:center}
+.cartridge{display:flex;flex-direction:column;position:relative;width:var(--cart-width);height:var(--cart-height);margin:0 auto;padding:0 12px 7px;transform:translateY(0);border:0;border-radius:10px 10px 3px 3px;background:var(--grain),linear-gradient(90deg,#06090d 0,#85818b 3px,#55505a 7px,#171b23 12px,#2c3038 16px,#292d34 calc(100% - 14px),#090e15 calc(100% - 10px),#817581 calc(100% - 5px),#25242d 100%);box-shadow:inset 0 2px 1px #b9aebb99,inset 0 -3px 2px #000,3px 4px 0 #05070a,7px 7px 7px #000b;transition:transform .5s cubic-bezier(.18,.82,.25,1),filter .25s;will-change:transform;z-index:1}
+.cartridge::before{content:'';position:absolute;inset:6px 8px 3px;border:0;border-left:1px solid #beb0c66b;border-right:1px solid #05080c;border-radius:3px;pointer-events:none}
+.cartridge::after{content:'';position:absolute;top:0;left:8px;right:8px;height:9px;pointer-events:none;border-top:1px solid #eee1ef66;border-bottom:1px solid #05080d;clip-path:polygon(7px 0,calc(100% - 7px) 0,100% 100%,0 100%);background:linear-gradient(#89808e,#44404b);z-index:0}
+.cartridge:hover{transform:translateY(-3px);filter:brightness(1.12)}
+.cartridge[aria-expanded=true],.cartridge[aria-expanded=true]:hover{transform:translateY(var(--travel));filter:none;box-shadow:inset 0 2px 1px #e2d0ff,0 0 0 1px #b19bd6,inset 0 -3px 2px #000,3px 4px 0 #080812,0 0 9px #ad8ee744}
+.cart-ribs{position:relative;flex:none;z-index:1;height:9px;margin:0;overflow:hidden;transform:perspective(80px) rotateX(32deg);transform-origin:bottom;border:0;border-radius:2px 2px 0 0;background:#24252c;box-shadow:inset 0 2px 1px #fff6}
+.cart-ribs img{width:100%;height:100%;object-fit:cover;object-position:50% 0;filter:brightness(.65);opacity:.85}
+.cart-label{position:relative;z-index:1;flex:none;display:flex;flex-direction:column;height:95px;margin:0;border:1px solid #070b10;border-top:1px solid #afa0b377;border-radius:0 0 3px 3px;background:#080c10;box-shadow:0 1px 0 #9c8f9e77;overflow:hidden}
+.cartridge:not(.logo-cart) .cart-label img{width:100%;height:100%;object-fit:contain;background:#080c10;border:0}
+.logo-cart .cart-label{align-items:center;justify-content:center;background:#07090c}.logo-cart .cart-label img{height:60px;width:auto;max-width:100%;object-fit:contain;border:0}.logo-cart .cart-label strong{flex:none;padding:0;font-size:13px}.jam-cart .cart-label img{height:88px;max-width:100%;padding:7px;filter:invert(1)}.logo-cart .cart-ribs{background:#101216}.logo-cart .cart-ribs img{opacity:0}
+.cart-base{display:flex;align-items:center;justify-content:center;height:22px;margin:2px 0 0}.cart-base svg{width:18px;height:18px;fill:#a69db3}
+.cartridge-slot::before{content:'';position:absolute;top:112px;left:9px;right:9px;height:18px;border:1px solid #766b7d;border-radius:2px;background:#020508;transform:perspective(240px) rotateX(35deg);box-shadow:inset 0 4px 4px #000}
+.module-lip{position:absolute;left:-2px;right:-2px;bottom:0;height:20px;z-index:3;border:0;border-radius:2px;pointer-events:none;background:var(--grain),linear-gradient(#a49aa8 0,#5a535e 2px,#35363c 5px,#20252b 17px,#080c11);box-shadow:0 -2px 4px #000d,0 3px 3px #0008}.module-lip::after{display:none}
+.selection-light{position:absolute;top:114px;left:21px;right:21px;height:2px;z-index:4;pointer-events:none;background:#e0caff;box-shadow:0 0 7px 2px #bf9efb99,0 0 17px 5px #a67edf55}
+.rack-window::before,.rack-window::after{content:'';position:absolute;top:0;bottom:19px;width:17px;z-index:6;pointer-events:none}.rack-window::before{left:0;background:linear-gradient(90deg,#030609e8,transparent);border-left:1px solid #63596766}.rack-window::after{right:0;background:linear-gradient(270deg,#030609e8,transparent);border-right:1px solid #63596766}
+.shelf-arrow{position:relative;z-index:8;align-self:center;justify-self:center;margin:0;width:46px;min-width:46px;height:59px;border-radius:9px;font-size:36px;line-height:1;background:var(--grain),linear-gradient(135deg,#303740,#171d26);border:1px solid #020508;box-shadow:0 0 0 3px #05080b,0 -1px 0 4px #9b909944,0 3px 4px #000c,inset 0 2px 1px #ad9fae77,inset -2px -2px 1px #080e16}.shelf-arrow:disabled{opacity:1;color:#66606c;background:linear-gradient(135deg,#282e36,#151a22)}.shelf-arrow::before{display:none}
+.monitor{flex:1;min-height:0;display:flex;flex-direction:column;padding:0;border:0;border-radius:0;background:none;box-shadow:none}.monitor::before,.monitor::after,.monitor-foot{display:none}
+.control-deck{position:relative;flex:none;display:flex;align-items:center;gap:10px;height:61px;margin:0 -1px 11px;padding:9px 8px 9px 64px;border:0;border-radius:0;background:var(--grain),linear-gradient(#6b626b 0,#36373d 3px,#282c31 12px,#292c31 85%,#202329);box-shadow:inset 0 1px 0 #c4b1c044}
+.control-deck::before{content:'';position:absolute;left:62px;right:59px;top:7px;bottom:5px;border:1px solid #04070b;border-radius:10px;background:linear-gradient(#252931,#191f26);box-shadow:0 -1px 1px #b0a1b266,0 1px 1px #91859166,inset 0 2px 4px #000;z-index:-0;pointer-events:none}.control-deck>*{position:relative;z-index:1}
+.profile-key,.contact-key{display:flex;align-items:center;justify-content:center;gap:8px;flex-shrink:0;min-width:112px;height:35px;padding:0 13px;font-size:13px;border-radius:5px;border:1px solid #050a10;background:linear-gradient(130deg,#343a45,#202730);box-shadow:inset 0 1px 1px #b4a4ba55,0 1px 1px #05090d,0 0 0 1px #74687933}.profile-key .personal-logo{width:22px;height:22px}.contact-key svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.4}.profile-key[aria-pressed=true],.contact-key[aria-pressed=true]{color:#e3d4ff;border-color:#8c77a7}
+.speaker{flex:1;background:none;mask:none;height:1px;min-width:0;margin:0;border-bottom:1px solid #66556822;align-self:end}.power{display:none}.languages{flex-shrink:0;width:104px;height:33px;padding:3px;border:1px solid #090b11;border-radius:17px;background:#0b1017;box-shadow:0 0 0 1px #998b9f55,inset 0 2px 4px #000;margin-right:12px}.language-slider{left:3px;top:3px;width:calc(50% - 3px);height:25px;border-radius:15px;background:linear-gradient(140deg,#e4d7ff,#a993cc);box-shadow:inset 0 1px 2px #fff9,0 0 6px #b698e644}.languages button{font-size:12px}.eject-key{width:35px;height:35px;flex:none;margin-left:6px;border:2px solid #1a1315;box-shadow:0 0 0 2px #070a0f,0 2px 4px #0008,inset 0 0 0 1px #ffe2bc;background:conic-gradient(from 40deg,#ad6943,#e0ad84,#8f4f31,#efc39c,#ad6943)}.eject-key svg{width:18px;fill:#2d201b}
+.bezel{position:relative;flex:1;min-height:0;display:flex;padding:19px 15px 14px;border:1px solid #06090b;border-radius:28px;background:linear-gradient(145deg,#020506 0,#080d10 25%,#13191e 80%,#3d3b40);box-shadow:0 -3px 0 #05090c,0 2px 1px #d3bcc866,0 0 0 2px #504a5144,inset 0 5px 3px #000,inset 6px 0 5px #000,inset -4px -3px 2px #77707855}
+.bezel::before{content:'';position:absolute;inset:7px;border:1px solid #151c22;border-radius:23px;box-shadow:0 0 0 3px #010507,inset 0 2px 2px #5a515a44;pointer-events:none}
+.screen{flex:1;min-height:0!important;height:auto!important;width:100%;position:relative;overflow:auto;border:1px solid #3e3547;border-radius:13px;padding:18px 28px 28px;background:radial-gradient(ellipse at 14% 0,#1b222b55,transparent 65%),#070c12;box-shadow:0 0 0 2px #000508,inset 0 4px 10px #0009;color:#ded8e8;scrollbar-width:thin;scrollbar-color:#716778 #0c1118;scroll-padding-top:58px}
+.screen-top{position:sticky;z-index:6;top:-18px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 0 14px;margin-top:-13px;margin-bottom:16px;border-bottom:1px solid #65557588;background:#080e15;box-shadow:0 8px 12px #080e15;letter-spacing:0;font-size:21px;font-weight:500;color:#c6afea}.screen-status{display:block!important;font-size:13px;font-weight:400;color:#c9b6e4;max-width:none}
+.project-heading{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:13px;row-gap:4px;margin:0 0 16px}.project-heading h1{order:0;flex:0 0 100%;color:#d0b9f6;font-size:clamp(28px,3.3vw,40px);line-height:1.2;letter-spacing:-.8px}.project-heading .eyebrow{order:1;font-size:11px;line-height:1.5;margin:0;color:#b4aabb}.project-heading .project-date{order:2;font-size:11px;line-height:1.5;margin:0;color:#a89bb6}.lead-media{height:clamp(190px,28dvh,280px)!important;aspect-ratio:auto;max-height:none;border:1px solid #4c415b;border-radius:5px;background:#03080c}.lead-media video,.lead-media iframe{width:100%;height:100%;object-fit:contain}.lead-media.still{background:#0c1118}
+.project-body{margin-top:20px;max-width:none}.description,.contributions li,.profile-copy{color:#d6cfdf;font-size:15px;line-height:1.75}.contributions{margin-top:22px}.contributions h2{color:#cdb7ee;font-size:21px;padding-bottom:8px}.contributions li{padding:9px 0 9px 20px;font-size:14px;border-bottom:1px solid #c6b1dd12}.contributions li::before{content:'•';color:#cbb3ef}.project-link{font-size:13px}.profile-heading h1{color:#cfb9f2}.roles{color:#bba8d3}.related-projects{margin-top:28px;padding-top:17px;border-top:1px solid #72618477}.related-projects h2{font-size:18px;color:#d2bff1}.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px}.related-link{display:grid;grid-template-columns:98px 1fr auto;align-items:center;gap:13px;min-height:65px;padding:0 13px 0 0;overflow:hidden;border:1px solid #4d405d;border-radius:6px;background:linear-gradient(110deg,#171c26,#080d14);font-size:13px;color:#cdb8eb}.related-art{width:98px;height:65px;object-fit:contain;background:#060b10}.related-link:hover{border-color:#bba3dc;background:#1b1b2b}
+@media(max-width:760px){
+ :root{--cart-width:204px;--cart-height:147px;--bay:226px}
+ .workspace{height:max(100dvh,720px);min-height:720px;padding:12px 8px 18px}.equipment{padding:12px 13px 18px;border-radius:28px}.equipment::before{inset:0;border-radius:28px}.equipment::after{inset:6px;border-radius:23px}
+ .cartridge-module{grid-template-columns:38px minmax(0,1fr) 38px;border-radius:15px 15px 5px 5px;padding:0}.cartridge-module::before{inset:0 36px 14px}.cartridge-module::after{left:36px;right:36px}.cartridge-rack{height:144px;padding:10px max(0px,calc((100% - var(--bay))/2)) 0}.cartridge-slot{height:134px}.shelf-arrow{width:29px;min-width:29px;height:49px;font-size:29px;border-radius:7px}.rack-window::before,.rack-window::after{width:10px}.module-lip{height:20px}
+ .control-deck{height:57px;margin:0 -1px 10px;padding:9px 5px;gap:6px;justify-content:space-between}.control-deck::before{left:0;right:39px;top:7px;bottom:7px}.profile-key,.contact-key{flex:1;min-width:0;height:34px;padding:0 6px;gap:5px;font-size:11px}.profile-key .personal-logo{width:18px;height:18px}.contact-key svg{width:17px;height:17px}.speaker{display:none}.languages{width:77px;height:31px;margin:0 3px}.language-slider{height:23px}.languages button{font-size:11px}.eject-key{width:30px;height:30px;margin-left:3px}
+ .bezel{padding:12px 8px 9px;border-radius:22px}.bezel::before{inset:5px;border-radius:17px}.screen{border-radius:10px;padding:16px 15px 26px}.screen-top{top:-16px;margin-top:-12px;padding-top:12px;padding-bottom:12px;margin-bottom:16px;font-size:14px}.screen-status{font-size:10px}.project-heading h1{font-size:27px;letter-spacing:-.6px}.project-heading .eyebrow,.project-heading .project-date{font-size:10px}.lead-media{height:auto!important;aspect-ratio:16/9;max-height:270px}.description,.contributions li,.profile-copy{font-size:14px}.contributions h2{font-size:19px}.profile-heading h1{font-size:26px}.related-grid{grid-template-columns:1fr;gap:10px}.related-link{grid-template-columns:75px 1fr auto;font-size:12px;gap:10px;min-height:60px}.related-art{width:75px;height:60px}
+}
+@media(min-width:600px) and (max-width:760px){.cartridge-rack{padding-inline:10px}}
+@media(max-width:359px){.equipment{padding-left:9px;padding-right:9px}.cartridge-module{grid-template-columns:30px minmax(0,1fr) 30px}.cartridge-module::before{left:28px;right:28px}.cartridge-module::after{left:28px;right:28px}.shelf-arrow{width:24px;min-width:24px;font-size:24px}.rack-window::before,.rack-window::after{width:5px}.contact-key svg{display:none}.profile-key,.contact-key{padding:0 4px;font-size:10px}.languages{width:70px}.eject-key{width:27px;height:27px}.control-deck{gap:4px}.screen{padding-inline:12px}.screen-top{font-size:13px}}
+@media(max-height:650px){.workspace{height:auto;min-height:100dvh;padding-top:12px}.equipment{flex:none;padding-top:12px}.bezel{flex:none;height:clamp(370px,82dvh,490px)}.screen{overscroll-behavior-y:auto}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+.video-poster{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:#05090d;display:grid;place-items:center;cursor:pointer}
+.lead-media.youtube{position:relative}.video-poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.video-poster .play-disc{position:relative;width:72px;height:72px;border-radius:50%;border:1px solid #d4c2ed;background:#161322bb;box-shadow:0 2px 15px #0009;display:grid;place-items:center;color:#decafa;font-size:28px;padding-left:4px;transition:background .2s,transform .2s}.video-poster:hover .play-disc{background:#453456;transform:scale(1.06)}
+@media(max-width:760px){.equipment::before{inset:-5px;border-width:37px;border-image-width:37px}.video-poster .play-disc{width:53px;height:53px;font-size:22px}}
+/* One continuous chassis. Its rear rim is BEHIND the moving cartridge layer. */
+.equipment{background:var(--grain),linear-gradient(115deg,#454850,#26292e 8%,#25262a 91%,#514b48);box-shadow:0 10px 0 -3px #07090b,0 20px 25px #000b}
+.equipment::before{inset:-8px;z-index:0;border:46px solid transparent;border-image:url('../assets/hardware/graphite-frame.png') 170 / 46px / 0 stretch;border-radius:0;box-shadow:none;background:none}
+.equipment::after{display:none}
+.cartridge-module{--cheek:64px;grid-template-columns:var(--cheek) minmax(0,1fr) var(--cheek);margin:0 -14px;height:144px;padding:0;background:none;isolation:isolate}
+/* Rear casing: recessed graphite wall with a thin upper rim, not a lid. */
+.cartridge-module::after{content:'';position:absolute;inset:3px 8px 9px;height:auto;z-index:0;transform:none;border:1px solid #070a0e;border-radius:12px;background:var(--grain),linear-gradient(#292e36 0,#080c12 7px,#111720 35%,#141a21 85%,#05080d);box-shadow:inset 0 3px 5px #000,0 -1px 0 #a599ac77,inset 3px 0 8px #000,inset -3px 0 8px #000;pointer-events:none}
+/* Foreground cheeks and sill hide the stored cards as the rail passes underneath. */
+.cartridge-module::before{inset:0;z-index:5;clip-path:polygon(0 0,var(--cheek) 0,var(--cheek) calc(100% - 10px),calc(100% - var(--cheek)) calc(100% - 10px),calc(100% - var(--cheek)) 0,100% 0,100% 100%,0 100%);border:1px solid #77737e;border-bottom:0;border-radius:14px 14px 0 0;background:var(--grain),linear-gradient(115deg,#4e515b,#292e37 10%,#272b33 88%,#514c52);box-shadow:inset 0 2px 2px #b9adbc66,inset 4px 0 3px #8d859055,inset -4px 0 3px #080c13;pointer-events:none}
+.rack-window{grid-column:1/-1;grid-row:1;z-index:2;width:100%!important;align-self:start}
+.cartridge-rack{height:144px;padding:0 var(--cheek);scroll-padding-inline:var(--cheek)}
+.cartridge-slot{height:144px}.cartridge{margin-top:0}
+.rack-window::before,.rack-window::after{top:0;bottom:20px;width:12px;z-index:6;border:0}
+.rack-window::before{left:var(--cheek);background:linear-gradient(90deg,#02050ce6,transparent)}
+.rack-window::after{right:var(--cheek);background:linear-gradient(270deg,#02050ce6,transparent)}
+.module-lip{left:var(--cheek);right:var(--cheek);height:20px;z-index:8}
+.shelf-arrow{grid-row:1;align-self:center;z-index:7;margin:0;width:43px;min-width:43px;height:49px;border-radius:8px;font-size:30px;background:linear-gradient(145deg,#3b414b,#20252f 55%,#141b24);box-shadow:0 0 0 3px #080b10,0 -1px 0 4px #aaa0ae55,0 4px 5px #0009,inset 0 1px 1px #b7a8c177,inset 0 -2px 1px #0b1019}
+#shelf-prev{grid-column:1}#shelf-next{grid-column:3}.shelf-arrow::before,.shelf-arrow::after{display:none}
+.control-deck{margin:0 -1px 11px;padding-left:68px;gap:12px;background:var(--grain),linear-gradient(#655e68 0,#34373e 2px,#282c31 12px,#292c31 85%,#202329)}
+.profile-key,.contact-key{height:36px;min-width:120px;border-radius:6px;background:linear-gradient(#333943,#232a34 70%,#1e252e);box-shadow:inset 0 1px 1px #c2b1c866,inset 0 -1px 1px #080c12,0 2px 2px #05090d,0 0 0 1px #0a0f15}
+.languages{border-radius:8px;height:32px;background:linear-gradient(#0c121a,#1f2630);box-shadow:inset 0 2px 3px #000,0 1px 0 #a395ab44}
+.language-slider{border-radius:5px;height:24px;background:linear-gradient(#dfd3f4,#ad99cc);box-shadow:inset 0 1px 1px #fff8,0 1px 3px #0007}
+@media(max-width:760px){
+ .equipment::before{inset:-5px;border-width:37px;border-image-width:37px}
+ .cartridge-module{--cheek:40px;margin-inline:0}
+ .cartridge-rack{padding-inline:calc((100% - var(--bay))/2)}
+ .shelf-arrow{width:28px;min-width:28px;height:44px;font-size:26px}
+ .control-deck{margin-left:8px;margin-right:8px;padding-left:0;padding-right:0;gap:6px}
+ .control-deck::before{left:-4px;right:36px}.profile-key,.contact-key{min-width:0;padding:0 4px;gap:4px;height:35px}
+ .languages{margin:0;height:31px}.language-slider{height:23px}.eject-key{margin-left:2px}
+}
+@media(max-width:359px){
+ .cartridge-module{--cheek:32px}.shelf-arrow{width:24px;min-width:24px}
+ .control-deck{gap:5px}.profile-key,.contact-key{padding:0 2px;gap:3px;font-size:10px}.profile-key .personal-logo{width:14px;height:14px}.languages{width:64px}
+}
+/* A single artwork crop continues across the front label and its folded top. */
+.cartridge:not(.logo-cart) .cart-ribs{margin-inline:1px;transform:none}
+.cartridge:not(.logo-cart) .cart-ribs img{width:100%;height:104px;max-width:none;object-fit:cover;object-position:center top;opacity:1;filter:brightness(.72)}
+.cartridge:not(.logo-cart) .cart-label img{width:100%;height:104px;max-width:none;flex:none;margin-top:-9px;object-fit:cover;object-position:center top}
+/* Finishing pass: a continuous faceplate, with reserved material around each recess. */
+.equipment{padding:24px 26px 34px}
+.cartridge-module{margin:0}
+.cartridge-module::before{inset:0 0 -2px;border:0;border-radius:0;box-shadow:none;background:var(--grain),linear-gradient(115deg,#363a42,#292d34 20%,#292c32 80%,#38383e)}
+.cartridge-module::after{inset:3px calc(var(--cheek) - 2px) 9px;border-radius:7px;box-shadow:inset 0 4px 6px #000,0 -1px 0 #9c90a255,inset 3px 0 8px #000,inset -3px 0 8px #000}
+.control-deck{margin:0 0 16px;background:none;box-shadow:none}
+.control-deck::before{top:9px;bottom:6px}
+.bezel{flex:1;min-height:0;margin:0 2px;overflow:hidden}
+@media(max-width:760px){
+ .equipment{padding:21px 18px 30px}
+ .cartridge-module{--cheek:36px;margin:0}
+ .control-deck{margin:0 3px 14px;gap:6px}
+ .control-deck::before{left:-3px;right:35px}
+ .bezel{margin:0}
+}
+@media(max-width:359px){
+ .equipment{padding:20px 14px 28px}
+ .cartridge-module{--cheek:28px}
+ .shelf-arrow{width:22px;min-width:22px;height:42px}
+ .control-deck{margin-inline:0;gap:4px}
+ .profile-key .personal-logo{display:none}
+}
+@media(max-height:650px){.equipment{padding-top:20px;padding-bottom:30px}.bezel{flex:none;height:clamp(370px,82dvh,490px)}}
+/* Shared powder-coated material prevents seams between the tray and faceplate. */
+.equipment,.cartridge-module::before{background:var(--grain),#2b2e35}
+.control-deck{height:64px}
+.profile-key,.contact-key{height:40px}
+.languages{height:36px}.language-slider{height:28px}
+@media(max-width:760px){
+ .control-deck{height:64px}.profile-key,.contact-key{height:40px}
+ .languages{height:35px}.language-slider{height:27px}.eject-key{width:34px;height:34px}
+ .control-deck::before{right:40px}
+}
+@media(max-width:359px){.eject-key{width:30px;height:30px}.languages{width:64px}.control-deck::before{right:35px}}
+/* Clearance above raised cartridges; the rear rim never touches their top fold. */
+.cartridge-module,.cartridge-rack{height:164px}
+.cartridge-rack{padding-top:20px}
+.rack-window::before,.rack-window::after{top:10px}
+.cartridge-module::after{background:var(--grain),linear-gradient(#292e36,#10161e 14px,#141a21 85%,#05080d)}
+#back-to-top{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:50;width:44px;height:44px;display:grid;place-items:center;border:1px solid #8b7a9c;border-radius:10px;background:linear-gradient(#353945,#171d27);box-shadow:inset 0 1px 1px #c6b4d577,0 3px 8px #0009;color:#e0cef7;cursor:pointer}
+#back-to-top[hidden]{display:none}
+#back-to-top svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#back-to-top:focus-visible{outline:2px solid #dfc9ff;outline-offset:3px}
+@media(max-width:599px){
+ .workspace{height:max(calc(100dvh + 90px),810px);min-height:810px;padding-bottom:34px}
+ .control-deck{gap:12px;padding-inline:5px}
+ .profile-key,.contact-key{flex:0 0 44px;width:44px;min-width:44px;height:44px;padding:0}
+ .profile-key>span,.contact-caption{display:none!important}
+ .profile-key .personal-logo{display:block;width:24px;height:24px}
+ .contact-key svg{display:block;width:23px;height:23px}
+ .languages{margin-left:auto;width:86px;height:38px}
+ .language-slider{height:30px}
+ .eject-key{width:36px;height:36px;margin-left:2px}
+ .control-deck::before{right:44px}
+}
+@media(max-width:359px){.control-deck{gap:7px;padding-inline:0}.languages{width:76px}}
+@media(max-height:650px){.workspace{height:auto;min-height:100dvh}.bezel{height:clamp(400px,82dvh,490px)}}
+/* Mobile controls share an explicit four-column footprint, including the eject key. */
+@media(max-width:599px){
+ .equipment,.monitor,.bezel,.screen,.control-deck{min-width:0}
+ .control-deck{display:grid;grid-template-columns:44px 44px 76px 36px;column-gap:0;justify-content:space-between;width:100%;margin:0 0 16px;padding:10px 8px;height:64px}
+ .control-deck::before{inset:6px 48px 6px -3px;border-radius:9px}
+ .profile-key,.contact-key{width:44px;min-width:0;margin:0;justify-self:center}
+ .profile-key{grid-column:1}.contact-key{grid-column:2}
+ .languages{grid-column:3;justify-self:end;box-sizing:border-box;width:76px;min-width:0;margin:0}
+ .languages button{min-width:0;padding:0;font-size:11px}
+ .eject-key{grid-column:4;justify-self:center;width:36px;height:36px;margin:0}
+ .speaker,.power{display:none}
+ .bezel{width:100%;margin:0;flex-shrink:0}
+ .screen{width:100%;max-width:100%}
+}
+@media(max-width:599px){
+ .equipment{padding-left:22px;padding-right:22px;padding-bottom:34px}
+ .control-deck{--control-gap:calc((100% - 216px)/3)}
+ .control-deck::before{left:0;right:calc(36px + var(--control-gap))}
+ .bezel{box-sizing:border-box}
+ .screen-top{flex-wrap:wrap;row-gap:2px}
+ .screen-status{margin-left:auto}
+}
+
+/* Navigation keys form one centered compact cluster, separate from ejection. */
+.navigation-keys{display:contents}
+@media(max-width:599px){
+ .control-deck{grid-template-columns:minmax(0,1fr) 36px;gap:10px;justify-content:normal;padding-inline:6px}
+ .control-deck::before{display:none}
+ .navigation-keys{display:flex;align-items:center;justify-content:center;gap:8px;min-width:0;height:52px;border:1px solid #080b10;border-radius:9px;background:linear-gradient(#252931,#191f26);box-shadow:inset 0 2px 4px #000,0 1px 1px #91859166}
+ .navigation-keys .profile-key,.navigation-keys .contact-key{flex:0 0 40px;width:40px;height:40px;min-width:0}
+ .navigation-keys .languages{flex:0 0 72px;width:72px;margin:0}
+ .eject-key{grid-column:2}
+}
+@media(max-width:599px){
+ .navigation-keys{width:max-content;max-width:100%;justify-self:center;padding-inline:8px}
+}
+/* The front and folded strip use the same crop: no repeated lettering at the seam. */
+.cartridge:not(.logo-cart) .cart-ribs{height:9px;flex:0 0 9px;border-radius:3px 3px 0 0;box-shadow:inset 0 1px 0 #ffffff44}
+.cartridge:not(.logo-cart) .cart-label{border-top:0;border-radius:0 0 4px 4px}
+.cartridge:not(.logo-cart) .cart-ribs img{display:block}
+.equipment::before{border-width:32px;border-image-width:32px}
+.cartridge-module::before{border-radius:5px 5px 0 0}
+@media(max-width:760px){.equipment::before{border-width:28px;border-image-width:28px}}
+.navigation-keys>*{position:relative;z-index:1}
+@media(max-width:359px){:root{--cart-width:180px;--bay:202px}}
+/* Keep the full original 16:9 artwork when the shell becomes narrower. */
+.cartridge:not(.logo-cart){--art-height:calc((var(--cart-width) - 26px)*.5625)}
+.cartridge:not(.logo-cart) .cart-label{height:calc(var(--art-height) - 9px)}
+.cartridge:not(.logo-cart) .cart-ribs img,.cartridge:not(.logo-cart) .cart-label img{height:var(--art-height);object-fit:fill}
+@media(max-width:599px){
+ :root{--cart-width:min(204px,calc(100vw - 156px));--bay:calc(var(--cart-width) + 22px)}
+ .cartridge-module{--cheek:40px}
+ .shelf-arrow{width:24px;min-width:24px;height:44px;justify-self:center}
+}
+/* Final alignment: the indicator belongs to the slot's upper lip. */
+.selection-light{top:123px;left:calc((var(--bay) - var(--cart-width))/2 + 5px);right:calc((var(--bay) - var(--cart-width))/2 + 5px);height:2px;box-shadow:0 0 5px 1px #bf9efb88,0 2px 10px 2px #a67edf44}
+.cartridge:not(.logo-cart) .cart-ribs{clip-path:polygon(5px 0,calc(100% - 5px) 0,100% 100%,0 100%);border-radius:0;transform:none}
+.cartridge:not(.logo-cart) .cart-label{box-shadow:0 1px 0 #9c8f9e55,inset 0 0 0 1px #0006}
+/* Rear rim is continuous and sits behind the cartridges. Side cheeks join
+   the faceplate below that rim, rather than protruding as clipped uprights. */
+.equipment{padding-top:12px;background:var(--grain),linear-gradient(transparent 20px,#2b2e35 20px);background-size:100% calc(100% - 20px),100% 100%;background-position:0 20px,0 0;background-repeat:no-repeat}
+.equipment::before{top:6px;clip-path:none}
+.cartridge-module::before{top:12px;border-radius:8px 8px 0 0;box-shadow:inset 0 1px 0 #8d879344}
+.cartridge-module::after{top:12px;border:0;border-radius:5px 5px 0 0;background:var(--grain),linear-gradient(#353a42 0,#1c222a 5px,#10151c 18px,#141a21 85%,#05080d);box-shadow:inset 0 1px 1px #a69da577,inset 3px 0 8px #000,inset -3px 0 8px #000}
+.selection-light{z-index:9}
+@media(min-width:600px) and (max-width:760px){
+ .cartridge-module{--cheek:40px}
+ .shelf-arrow{width:24px;min-width:24px}
+ .profile-key,.contact-key{flex:0 0 112px}
+ .control-deck{justify-content:flex-start;gap:12px}
+ .languages{margin-left:auto}
+ .control-deck::before{right:44px}
+}
+
+/* Light emitted from the slot: a narrow diffuser with a soft reflected halo. */
+.selection-light{height:1px;border-radius:50%;background:linear-gradient(90deg,transparent,#bca0eb 12%,#ded0f5 50%,#bca0eb 88%,transparent);box-shadow:0 1px 3px #bca0eb66;transition:opacity 160ms ease;transition-delay:0ms}
+.selection-light::after{content:'';position:absolute;inset:-2px 4px -3px;border-radius:50%;background:#b897ed;filter:blur(4px);opacity:.5;pointer-events:none}
+.cartridge-slot.active .selection-light{opacity:.9;transition-delay:240ms}
+/* Parametric chassis: one lit mesh, with DOM controls over their physical seats. */
+.tray-cheek{position:relative;z-index:7;grid-row:1;display:grid;place-items:center;align-self:stretch}
+.tray-cheek-left{grid-column:1}.tray-cheek-right{grid-column:3}
+.tray-cheek .shelf-arrow{grid-column:auto!important;grid-row:auto}
+.chassis-scene{position:absolute;left:0;top:0;z-index:0;pointer-events:none;filter:drop-shadow(0 16px 12px #0009)}
+.has-3d-chassis{background:none;box-shadow:none;border-radius:30px;padding-top:14px}
+.has-3d-chassis::before,.has-3d-chassis::after{display:none}
+.has-3d-chassis .cartridge-module::before,.has-3d-chassis .cartridge-module::after{display:none}
+.has-3d-chassis .cartridge-rack{mask-image:linear-gradient(90deg,transparent var(--cheek),#000 calc(var(--cheek) + 1px),#000 calc(100% - var(--cheek) - 1px),transparent calc(100% - var(--cheek)))}
+.has-3d-chassis .tray-cheek{background:none;box-shadow:none}
+.has-3d-chassis .bezel{background:none;box-shadow:none;border-color:transparent}
+.has-3d-chassis .bezel::before{display:none}
+.has-3d-chassis .shelf-arrow{background:none;box-shadow:none;border-color:transparent}
+.has-3d-chassis .shelf-arrow:disabled{background:none;color:#777180}
+.has-3d-chassis .shelf-arrow:hover{background:#d6c2ff0c}
+.has-3d-chassis .module-lip{background:linear-gradient(#69606f 0,#37343e 1px,#24262c 4px,#22242a);box-shadow:0 -2px 3px #0008,0 2px 2px #0007;height:20px}
+.has-3d-chassis .cartridge{transform:perspective(800px) rotateX(-4deg);transform-origin:center bottom}
+.has-3d-chassis .cartridge:hover{transform:perspective(800px) translateY(-3px) rotateX(-4deg)}
+.has-3d-chassis .cartridge[aria-expanded=true]{transform:perspective(800px) translateY(var(--travel)) rotateX(-4deg)}
+.has-3d-chassis .screen{box-shadow:0 0 0 1px #0008,inset 0 3px 8px #000a}
+/* The moving rack ends at the slot, keeping the light above the foreground lip. */
+.has-3d-chassis .cartridge-rack{z-index:9;clip-path:inset(0 var(--cheek) 18px var(--cheek))}
+.has-3d-chassis .rack-window::before,.has-3d-chassis .rack-window::after{z-index:10}
+.has-3d-chassis .rack-window{clip-path:inset(0 var(--cheek) 0 var(--cheek))}
