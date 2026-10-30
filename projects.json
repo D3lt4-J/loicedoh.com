@@ -1,0 +1,367 @@
+[
+  {
+    "id": "jam-in",
+    "title": "Jam-In",
+    "category": [
+      "Plateforme web · Fondateur / Conception produit",
+      "Web platform · Founder / Product design"
+    ],
+    "date": [
+      "2025 — aujourd’hui",
+      "2025 — present"
+    ],
+    "image": "assets/featured/jam-in.png",
+    "url": "https://www.jam-in.net/",
+    "cta": [
+      "Découvrir Jam-In",
+      "Explore Jam-In"
+    ],
+    "desc": [
+      "Plateforme de découverte et de gestion d’événements musicaux locaux : jam sessions, scènes ouvertes et concerts. Pour les publics comme pour les organisateurs.",
+      "Platform to discover and manage local live music events: jam sessions, open mics and concerts, for audiences and organizers."
+    ],
+    "items": [
+      [
+        "Fondation et conception du produit de bout en bout : recherche utilisateurs, stratégie, parcours, spécifications, priorisation et lancement.",
+        "Founded and designed the product end to end: user research, strategy, user journeys, specifications, prioritization and launch."
+      ],
+      [
+        "Validation du besoin avant le développement : premier test d’inscription, puis prototype sous forme d’infolettre pour explorer la découverte d’événements locaux.",
+        "Validated demand before development through an initial sign-up test, then a newsletter prototype exploring local event discovery."
+      ],
+      [
+        "Conception des parcours de découverte et des outils organisateurs à partir des usages terrain et de retours directs.",
+        "Designed discovery journeys and organizer tools based on field observations and direct feedback."
+      ],
+      [
+        "Évolution des modèles de récurrence, de la gestion des médias et de la prise en charge de plusieurs identités d’organisateurs.",
+        "Iterated on recurring-event models, media management and support for multiple organizer identities."
+      ],
+      [
+        "Mise en place d’un développement assisté par agents IA : traduction des spécifications en implémentation, analyse des contraintes techniques, déploiement et itérations.",
+        "Established an AI-agent-assisted development workflow: translating specifications into implementation, analyzing technical constraints, deploying and iterating."
+      ]
+    ]
+  },
+  {
+    "id": "seekers",
+    "title": "Seekers of the Ancient",
+    "category": [
+      "RPG coopératif · Forge Hammer Entertainment",
+      "Co-op RPG · Forge Hammer Entertainment"
+    ],
+    "date": [
+      "octobre 2025 — octobre 2026",
+      "October 2025 — October 2026"
+    ],
+    "image": "assets/featured/seekers.jpg",
+    "url": "https://store.steampowered.com/app/2598580/Seekers_of_the_Ancient/",
+    "cta": [
+      "Voir sur Steam",
+      "View on Steam"
+    ],
+    "desc": [
+      "Conception de quêtes et d’activités pour un RPG en monde ouvert, en collaboration avec l’équipe technique. Développement d’outils assistés par agents IA pour soutenir la production.",
+      "Quest and activity design for an open-world RPG, working with the technical team. Development of AI-agent-assisted tools to support production."
+    ],
+    "items": [
+      [
+        "Conception et équilibrage de quêtes, d’activités et de mécaniques interconnectées : rythme, progression, conditions et challenge.",
+        "Design and balancing of quests, activities and interconnected mechanics: pacing, progression, conditions and challenge."
+      ],
+      [
+        "Production des quêtes de la conception à l’intégration en moteur, puis itérations avec l’équipe technique selon les contraintes de production et les retours sur l’expérience joueur.",
+        "Quest production from design to in-engine integration, followed by iteration with the technical team based on production constraints and player-experience feedback."
+      ],
+      [
+        "Identification d’une limitation du système de quêtes et proposition d’une gestion de leurs dépendances et de leur hiérarchie, utilisée sur plusieurs séries de quêtes.",
+        "Identified a limitation in the quest system and proposed dependency and hierarchy management used across multiple quest series."
+      ],
+      [
+        "Développement d’un agent autonome personnalisé avec Hermes Agent pour accompagner la production des quêtes, de l’idéation à l’intégration en moteur.",
+        "Developed a custom autonomous agent with Hermes Agent to support quest production, from ideation to in-engine integration."
+      ]
+    ],
+    "gallery": [
+      "assets/portfolio/page-3-0.png"
+    ],
+    "video_source": "https://youtu.be/H1DFRMB-EGY",
+    "youtube": "H1DFRMB-EGY"
+  },
+  {
+    "id": "lucky-luke",
+    "title": "Lucky Luke: Panique au Saloon",
+    "category": [
+      "Réalité virtuelle · Kalank Games · FIBD 2025",
+      "Virtual reality · Kalank Games · FIBD 2025"
+    ],
+    "date": [
+      "2025",
+      "2025"
+    ],
+    "image": "assets/portfolio/page-5-0.png",
+    "video_source": "https://youtu.be/pe22dM1mmOw",
+    "desc": [
+      "Expérience de tir en réalité virtuelle de cinq minutes, répartie sur trois niveaux. Conçue chez Kalank Games, présentée au Festival International de la Bande Dessinée d’Angoulême 2025 (FIBD), puis adaptée et déployée au Parc Spirou Provence.",
+      "A five-minute VR shooting experience across three levels. Developed at Kalank Games, presented at Angoulême International Comic Festival 2025 (FIBD), then adapted and deployed at Parc Spirou Provence."
+    ],
+    "items": [
+      [
+        "Conception de bout en bout : structure de l’expérience, enchaînement des trois niveaux et parcours du joueur.",
+        "End-to-end design: experience structure, three-level sequence and player routes."
+      ],
+      [
+        "Conception des systèmes de combat et des règles de score ; équilibrage du rythme, de la progression et de la difficulté pour une session VR courte.",
+        "Combat and scoring systems; balancing pacing, progression and difficulty for a short VR session."
+      ],
+      [
+        "Production des layouts et spécifications nécessaires à la réalisation des niveaux.",
+        "Production of level layouts and implementation specifications."
+      ],
+      [
+        "Collaboration directe avec les programmeurs, de la conception au graybox et à l’implémentation.",
+        "Direct collaboration with programmers, from design through grayboxing and implementation."
+      ],
+      [
+        "Travail sur les outils de level design et les dialogues.",
+        "Work on level design tools and dialogue."
+      ]
+    ],
+    "gallery": [
+      "assets/portfolio/page-5-0.png"
+    ],
+    "youtube": "pe22dM1mmOw"
+  },
+  {
+    "id": "heavy-skits",
+    "title": "Heavy Skits",
+    "category": [
+      "Game jam · Jeu de cartes · 48 h · 6 personnes",
+      "Game jam · Card game · 48 hours · 6 people"
+    ],
+    "date": [
+      "janvier 2024",
+      "January 2024"
+    ],
+    "image": "assets/game-covers/heavy-skits.png",
+    "video": "assets/gameplay-web/heavy-skits.mp4",
+    "gallery": [
+      "assets/project_images/heavy-skits/screeshot-1.png",
+      "assets/project_images/heavy-skits/screeshot-3.png"
+    ],
+    "url": "https://en-ra.itch.io/heavy-skits",
+    "cta": [
+      "Jouer sur itch.io",
+      "Play on itch.io"
+    ],
+    "desc": [
+      "Jeu de cartes humoristique où chaque blague a un poids et doit correspondre aux goûts du public, sous pression du temps.",
+      "A timed comedy card game where jokes have different weights and must match the audience’s preferences."
+    ],
+    "items": [
+      [
+        "Itérations rapides pendant la game jam.",
+        "Rapid iteration during a game jam."
+      ],
+      [
+        "Mécaniques de cartes et réactions.",
+        "Card and audience reaction mechanics."
+      ],
+      [
+        "Système pour l’intégration sonore.",
+        "System supporting audio integration."
+      ]
+    ]
+  },
+  {
+    "id": "slice-master",
+    "title": "The Slice Master",
+    "category": [
+      "Mobile · Idle game",
+      "Mobile · Idle game"
+    ],
+    "date": [
+      "",
+      ""
+    ],
+    "image": "assets/portfolio/page-7-0.png",
+    "desc": [
+      "Analyse des boucles de progression et de récompense des idle games, puis conception de mécaniques adaptées à un jeu de découpe.",
+      "Research into idle-game progression and reward loops, followed by mechanics design for a slicing game."
+    ],
+    "items": [
+      [
+        "Analyse comparative et rétroconception du genre.",
+        "Genre research and reverse design."
+      ],
+      [
+        "Synthèse de recherche partagée avec l’équipe.",
+        "Research findings documented for the team."
+      ],
+      [
+        "Mécaniques de découpe et améliorations.",
+        "Slicing mechanics and upgrades."
+      ]
+    ],
+    "gallery": [
+      "assets/portfolio/page-7-0.png",
+      "assets/portfolio/page-7-1.png"
+    ],
+    "visible": false
+  },
+  {
+    "id": "seeds-of-elements",
+    "title": "Seeds of Elements",
+    "category": [
+      "Mobile · Jeu de cartes stratégique",
+      "Mobile · Strategic card game"
+    ],
+    "date": [
+      "",
+      ""
+    ],
+    "image": "assets/portfolio/page-8-0.png",
+    "desc": [
+      "Adaptation d’un jeu de cartes physique sur mobile, en collaboration régulière avec le client et dans les limites du budget de production.",
+      "Adaptation of a physical card game for mobile, through regular client reviews and within production budget constraints."
+    ],
+    "items": [
+      [
+        "Adaptation des règles et création d’effets de cartes.",
+        "Rule adaptation and new card effects."
+      ],
+      [
+        "Progression et équilibrage de la difficulté.",
+        "Progression and difficulty balancing."
+      ],
+      [
+        "Documentation pour le client et les programmeurs.",
+        "Documentation for client and programmers."
+      ]
+    ],
+    "gallery": [
+      "assets/portfolio/page-8-0.png",
+      "assets/portfolio/page-8-1.png",
+      "assets/portfolio/page-8-2.png"
+    ],
+    "visible": false
+  },
+  {
+    "id": "airship-city",
+    "title": "Airship City",
+    "category": [
+      "Prototype · Unity",
+      "Prototype · Unity"
+    ],
+    "date": [
+      "juin 2023",
+      "June 2023"
+    ],
+    "image": "assets/game-covers/airship-city.png",
+    "video": "assets/gameplay-web/airship-city.mp4",
+    "gallery": [
+      "assets/project_images/airship-city/gameplay-timeline_2.png",
+      "assets/project_images/airship-city/fleet.png"
+    ],
+    "desc": [
+      "Un prototype de city builder où l’on gère une flotte de vaisseaux volants, ses ressources et les effets de la météo.",
+      "A city-builder prototype about managing a fleet of flying ships, its resources and the effects of the weather."
+    ],
+    "items": [
+      [
+        "Conception du gameplay, des systèmes et équilibrage.",
+        "Core gameplay, systems design and balancing."
+      ],
+      [
+        "Construction d’une chronologie de progression pour guider l’équilibrage.",
+        "Creation of a progression timeline to guide balancing."
+      ],
+      [
+        "Paramétrage dans FMOD des ambiances et de la musique en fonction des situations de jeu.",
+        "FMOD parameters for ambience and music responding to gameplay situations."
+      ]
+    ]
+  },
+  {
+    "id": "delivered-with-care",
+    "title": "Delivered With Care",
+    "category": [
+      "Game jam · Unity",
+      "Game jam · Unity"
+    ],
+    "date": [
+      "avril 2023",
+      "April 2023"
+    ],
+    "image": "assets/game-covers/dwc.png",
+    "video": "assets/gameplay-web/dwc.mp4",
+    "gallery": [
+      "assets/project_images/dwc/screenshot-2.png",
+      "assets/project_images/dwc/screenshot-3.png"
+    ],
+    "url": "https://steeviee.itch.io/delivered-with-care",
+    "cta": [
+      "Jouer sur itch.io",
+      "Play on itch.io"
+    ],
+    "desc": [
+      "Un jeu de plateforme 2D où le colis permet des mouvements spéciaux, mais ne doit pas toucher le sol trop souvent.",
+      "A 2D platformer where a package enables special moves, but must not hit the ground too often."
+    ],
+    "items": [
+      [
+        "Conception du gameplay et des niveaux autour du colis.",
+        "Gameplay and level design built around the package."
+      ],
+      [
+        "Introduction progressive des mécaniques dans les niveaux.",
+        "Progressive introduction of mechanics throughout the levels."
+      ],
+      [
+        "Effets sonores, musique et intégration.",
+        "Sound effects, music and integration."
+      ]
+    ]
+  },
+  {
+    "id": "greedy-bubble",
+    "title": "Greedy Bubble",
+    "category": [
+      "Game jam · Unity",
+      "Game jam · Unity"
+    ],
+    "date": [
+      "août 2023",
+      "August 2023"
+    ],
+    "image": "assets/game-covers/greedy-bubble.png",
+    "video": "assets/gameplay-web/greedy-bubble.mp4",
+    "gallery": [
+      "assets/project_images/greedy-bubble/core-gameplay.jpg",
+      "assets/project_images/greedy-bubble/screenshot-2.png"
+    ],
+    "url": "https://azarmajed.itch.io/greedy-bubble",
+    "cta": [
+      "Jouer sur itch.io",
+      "Play on itch.io"
+    ],
+    "desc": [
+      "Un jeu d’arcade où une bulle sous-marine ramasse des pièces et évite des harpons, avec une difficulté croissante.",
+      "An arcade game where an underwater bubble collects coins and avoids harpoons, with increasing difficulty."
+    ],
+    "items": [
+      [
+        "Définition et documentation d’un gameplay adapté au temps disponible.",
+        "Definition and documentation of gameplay suited to the available time."
+      ],
+      [
+        "Équilibrage par itération sur des paramètres exposés dans Unity.",
+        "Iterative balancing using parameters exposed in Unity."
+      ],
+      [
+        "Composition de la musique et intégration audio.",
+        "Music composition and audio integration."
+      ]
+    ]
+  }
+]
