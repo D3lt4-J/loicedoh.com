@@ -289,3 +289,22 @@ body{background:radial-gradient(ellipse at 18% 10%,#30343b80,transparent 58%),ra
  .workspace{padding-block:18px 48px}
  .bezel{height:690px}
 }
+
+
+/* Sculpted enclosure: the established commands retain their exact footprints. */
+.bezel{height:clamp(844px,99.9dvh,1177px)}
+@media(max-width:760px){.bezel{height:clamp(744px,102.12dvh,999px)}}
+@media(max-height:650px) and (min-width:600px){.bezel{height:766px}}
+/* A shallow visible top belongs to the cartridge, not to a duplicate title strip. */
+.has-3d-chassis .cartridge,
+.has-3d-chassis .cartridge:hover,
+.has-3d-chassis .cartridge[aria-expanded=true]{transform:translateY(0);transform-origin:center bottom}
+.has-3d-chassis .cartridge:hover{transform:translateY(-3px)}
+.has-3d-chassis .cartridge[aria-expanded=true]{transform:translateY(var(--travel))}
+.cartridge:not(.logo-cart) .cart-ribs{height:12px;flex-basis:12px;transform:perspective(250px) rotateX(48deg);transform-origin:center bottom;overflow:hidden;margin-top:-3px;box-shadow:inset 0 2px 1px #d4c7df66,inset 0 -1px 1px #0007}
+.cartridge:not(.logo-cart) .cart-ribs img{height:var(--art-height);filter:brightness(.72)}
+.cartridge:not(.logo-cart) .cart-label{height:calc(var(--art-height) - 12px);border-top:1px solid #c1adc833}
+.cartridge:not(.logo-cart) .cart-label img{margin-top:-12px;height:var(--art-height)}
+/* The upper opening stays dark; its sill is the foreground wall of the enclosure. */
+.has-3d-chassis .module-lip{border-radius:3px 3px 2px 2px;box-shadow:0 -2px 5px #000d,0 3px 3px #0008}
+.logo-cart .cart-ribs{height:12px;flex-basis:12px;margin-top:-3px;transform:perspective(250px) rotateX(48deg);transform-origin:center bottom;clip-path:polygon(5px 0,calc(100% - 5px) 0,100% 100%,0 100%);background:linear-gradient(#57535f,#242630);box-shadow:inset 0 2px 1px #d4c7df66}
