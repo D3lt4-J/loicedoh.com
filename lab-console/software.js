@@ -1,0 +1,25 @@
+import * as T from './vendor/three.js';
+// A CPU preview of the same meshes for browsers where WebGL is disabled.
+// The production GPU renderer retains environment reflections and shadow maps.
+export class SoftwareRenderer{
+ constructor(canvas){this.canvas=canvas;this.ctx=canvas.getContext('2d');this.shadowMap={};this.capabilities={getMaxAnisotropy:()=>1};this.dpr=1;this.cache=new WeakMap();this.cpu=true;}
+ setPixelRatio(n){this.dpr=1}setSize(w,h){this.w=w;this.h=h;this.canvas.width=w*this.dpr;this.canvas.height=h*this.dpr;}
+ render(scene,camera){const ctx=this.ctx,dpr=this.dpr;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,this.w,this.h);scene.updateMatrixWorld(true);camera.updateMatrixWorld();const faces=[];const view=new T.Matrix4().multiplyMatrices(camera.projectionMatrix,camera.matrixWorldInverse),normalMatrix=new T.Matrix3();const a=new T.Vector3(),b=new T.Vector3(),c=new T.Vector3(),v=new T.Vector3(),n=new T.Vector3();
+ scene.traverse(o=>{if(!o.isMesh||!o.visible||!o.parent.visible)return;const geometry=o.geometry,mat=o.material;if(Array.isArray(mat))return;const pos=geometry.attributes.position,norm=geometry.attributes.normal,uv=geometry.attributes.uv,index=geometry.index;const matrix=new T.Matrix4().multiplyMatrices(view,o.matrixWorld);normalMatrix.getNormalMatrix(o.matrixWorld);const count=index?index.count:pos.count;
+ for(let i=0;i<count;i+=3){const ids=[0,1,2].map(k=>index?index.getX(i+k):i+k);a.fromBufferAttribute(pos,ids[0]).applyMatrix4(matrix);b.fromBufferAttribute(pos,ids[1]).applyMatrix4(matrix);c.fromBufferAttribute(pos,ids[2]).applyMatrix4(matrix);const cross=(b.x-a.x)*(c.y-a.y)-(b.y-a.y)*(c.x-a.x);if(cross<=0&&mat.side!==T.DoubleSide)continue;if(Math.max(Math.abs(a.x),Math.abs(a.y))>3)continue;
+ n.set(0,0,0);for(const id of ids){v.fromBufferAttribute(norm,id);n.add(v)}n.normalize().applyMatrix3(normalMatrix).normalize();v.fromBufferAttribute(pos,ids[0]).applyMatrix4(o.matrixWorld);const light=new T.Vector3(-.5,.7,1).normalize(),warm=new T.Vector3(.9,.4,.5).normalize(),eye=new T.Vector3(0,.1,1);const diff=Math.max(0,n.dot(light)),rim=Math.max(0,n.dot(warm)),half=light.clone().add(eye).normalize();const spec=Math.pow(Math.max(0,n.dot(half)),18+(1-mat.roughness)*70),fres=Math.pow(1-Math.max(0,n.z),3);const color=mat.color.clone().convertLinearToSRGB();const e=mat.emissive?.clone().multiplyScalar(mat.emissiveIntensity||0);const lighting=.40+diff*.70+rim*.12;const boost=(mat.metalness||0)*spec*.7+fres*.12;
+ const rgb=[color.r,color.g,color.b].map((k,j)=>Math.max(0,Math.min(255,Math.round((k*lighting+boost*[.8,.86,1][j]+rim*(mat.metalness||0)*[.07,.045,.025][j]+(e?[e.r,e.g,e.b][j]:0))*255))));
+ faces.push({p:[a.clone(),b.clone(),c.clone()].map(p=>[(p.x*.5+.5)*this.w,(-p.y*.5+.5)*this.h]),z:(a.z+b.z+c.z)/3,zs:[a.z,b.z,c.z],color:rgb,uv:uv?ids.map(id=>[uv.getX(id),1-uv.getY(id)]):null,image:mat.map?.image,light:lighting,clip:o.userData.clipRange?o.userData.clipRange.map(x=>{const q=new T.Vector3(x,0,.4).applyMatrix4(view);return (q.x*.5+.5)*this.w}):null});
+ }});faces.sort((a,b)=>b.z-a.z);
+ const width=Math.round(this.w),height=Math.round(this.h),out=ctx.createImageData(width,height),depth=new Float32Array(width*height);depth.fill(Infinity);
+ for(const f of faces){const p=f.p;const [a,b,c]=p;const den=(b[1]-c[1])*(a[0]-c[0])+(c[0]-b[0])*(a[1]-c[1]);if(Math.abs(den)<.001)continue;
+ const xmin=Math.max(0,Math.floor(Math.min(a[0],b[0],c[0])),f.clip?Math.floor(f.clip[0]):0),xmax=Math.min(width-1,Math.ceil(Math.max(a[0],b[0],c[0])),f.clip?Math.ceil(f.clip[1]):width-1),ymin=Math.max(0,Math.floor(Math.min(a[1],b[1],c[1]))),ymax=Math.min(height-1,Math.ceil(Math.max(a[1],b[1],c[1])));
+ let texture=null;if(f.image&&f.image.complete&&f.image.naturalWidth&&f.uv){texture=this.cache.get(f.image);if(!texture){const tmp=document.createElement('canvas');tmp.width=f.image.naturalWidth;tmp.height=f.image.naturalHeight;const tc=tmp.getContext('2d');tc.drawImage(f.image,0,0);texture={data:tc.getImageData(0,0,tmp.width,tmp.height).data,w:tmp.width,h:tmp.height};this.cache.set(f.image,texture);}}
+ for(let y=ymin;y<=ymax;y++)for(let x=xmin;x<=xmax;x++){const w0=((b[1]-c[1])*(x+.5-c[0])+(c[0]-b[0])*(y+.5-c[1]))/den,w1=((c[1]-a[1])*(x+.5-c[0])+(a[0]-c[0])*(y+.5-c[1]))/den,w2=1-w0-w1;if(w0<-.0001||w1<-.0001||w2<-.0001)continue;const i=y*width+x;
+ const z=w0*f.zs[0]+w1*f.zs[1]+w2*f.zs[2];if(z>=depth[i])continue;const j=i*4;
+ if(texture){const u=w0*f.uv[0][0]+w1*f.uv[1][0]+w2*f.uv[2][0],v=w0*f.uv[0][1]+w1*f.uv[1][1]+w2*f.uv[2][1];const tx=Math.max(0,Math.min(texture.w-1,Math.floor(u*texture.w))),ty=Math.max(0,Math.min(texture.h-1,Math.floor(v*texture.h))),k=(ty*texture.w+tx)*4;if(texture.data[k+3]<128)continue;for(let q=0;q<3;q++)out.data[j+q]=texture.data[k+q]*Math.min(1.1,f.light);}
+ else {const grit=(((x*374761393+y*668265263)^(x*y*1274126177))>>>25)/31-.5;const side=Math.exp(-Math.pow((x/width-.06)*12,2))*.10+Math.exp(-Math.pow((x/width-.95)*13,2))*.065;for(let q=0;q<3;q++)out.data[j+q]=f.color[q]*(.91+side)+grit*2.5;}out.data[j+3]=255;depth[i]=z;
+ }
+ }ctx.putImageData(out,0,0);
+ }
+}
