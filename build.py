@@ -1,3 +1,5 @@
+raise SystemExit("Legacy generator disabled: index.html is now the canonical static source. See README.md and archive/legacy-generator/.")
+
 from pathlib import Path
 from html import escape as e
 import json

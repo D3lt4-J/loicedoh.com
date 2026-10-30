@@ -1,14 +1,36 @@
 # Loïc Edoh — Portfolio
 
-Portfolio statique bilingue récupéré de ChatGPT Sites, version 29.
-Source originale : `e4f1ccb52aafc90acd3e2f4eac3d62916d19b3c7`.
+Bilingual static portfolio hosted with GitHub Pages at https://loicedoh.com.
 
-Les fichiers publiés sont à la racine pour conserver la publication GitHub Pages existante. Le fichier `CNAME` conserve `loicedoh.com`.
+## Current source
 
-## Régénérer
+The validated cartridge-console design is published directly from the repository root. `index.html` is the canonical page source; styles, interactions and media are in `styles/`, `scripts/` and `assets/`. No build or package installation is required.
 
-Exécuter `python3 build.py`. Le générateur original est conservé avec une seule adaptation : sa destination est la racine au lieu de `dist/`. Les contenus sont dans `projects.json`, les styles dans `styles/`, les interactions dans `scripts/` et les médias dans `assets/`.
+The release removes the concept-preview banner and uses versioned stylesheet/script URLs to avoid stale browser caches. Delivered With Care retains its video and only the supplied high-resolution park screenshot in its gallery.
 
-Le HTML, les CSS, les JavaScript et les médias importés sont identiques à la version Sites. Les ressources historiques non remplacées restent présentes pour préserver leurs URL.
+Preserve `CNAME` (`loicedoh.com`) and `.nojekyll`. Historical assets remain available so existing URLs continue to work. Experimental `lab-console` and QA pages are not included in this release.
 
-Le formulaire existant dépend de Web3Forms et les vidéos intégrées de YouTube. Aucun service serveur n’est requis pour héberger le portfolio.
+## Preview and validation
+
+From the repository root:
+
+```sh
+python -m http.server 8766 --bind 127.0.0.1
+python tools/validate_site.py .
+```
+
+Validation requires Python and Node.js, but no third-party packages. It checks release markup, local HTML/CSS resources, JavaScript syntax, the domain configuration and the Delivered With Care gallery.
+
+## Legacy generator
+
+**Do not regenerate this release with the old generator.** `build.py` now exits without writing files because its old template would overwrite the validated interface. The unmodified generator and its data are archived in `archive/legacy-generator/` for reference only. The root `projects.json` is historical data, not the current source of truth.
+
+Make content changes directly in `index.html` until a future generator migration is explicitly designed and tested.
+
+## External services
+
+The contact form uses Web3Forms; embedded videos may use YouTube. No backend is needed on GitHub Pages. Contact submissions must not be sent as part of automated tests.
+
+## Rollback
+
+The pre-migration main commit is `dea378239295a750379a5a881bda263f5b14031c`. To undo the release after publication, revert the release commit and push the revert through the normal deployment process; do not force-push or reset shared history.
