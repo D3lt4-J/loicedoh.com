@@ -18,7 +18,7 @@ export class SoftwareRenderer{
  for(let y=ymin;y<=ymax;y++)for(let x=xmin;x<=xmax;x++){const w0=((b[1]-c[1])*(x+.5-c[0])+(c[0]-b[0])*(y+.5-c[1]))/den,w1=((c[1]-a[1])*(x+.5-c[0])+(a[0]-c[0])*(y+.5-c[1]))/den,w2=1-w0-w1;if(w0<-.0001||w1<-.0001||w2<-.0001)continue;const i=y*width+x;
  const z=w0*f.zs[0]+w1*f.zs[1]+w2*f.zs[2];if(z>=depth[i])continue;const j=i*4;
  if(texture){const u=w0*f.uv[0][0]+w1*f.uv[1][0]+w2*f.uv[2][0],v=w0*f.uv[0][1]+w1*f.uv[1][1]+w2*f.uv[2][1];const tx=Math.max(0,Math.min(texture.w-1,Math.floor(u*texture.w))),ty=Math.max(0,Math.min(texture.h-1,Math.floor(v*texture.h))),k=(ty*texture.w+tx)*4;if(texture.data[k+3]<128)continue;for(let q=0;q<3;q++)out.data[j+q]=texture.data[k+q]*Math.min(1.1,f.light);}
- else {const grit=(((x*374761393+y*668265263)^(x*y*1274126177))>>>25)/31-.5;const side=Math.exp(-Math.pow((x/width-.06)*12,2))*.10+Math.exp(-Math.pow((x/width-.95)*13,2))*.065;for(let q=0;q<3;q++)out.data[j+q]=f.color[q]*(.91+side)+grit*5;}out.data[j+3]=255;depth[i]=z;
+ else {const grit=(((x*374761393+y*668265263)^(x*y*1274126177))>>>25)/31-.5;const side=Math.exp(-Math.pow((x/width-.06)*12,2))*.10+Math.exp(-Math.pow((x/width-.95)*13,2))*.065;for(let q=0;q<3;q++)out.data[j+q]=f.color[q]*(.91+side)+grit*2.5;}out.data[j+3]=255;depth[i]=z;
  }
  }ctx.putImageData(out,0,0);
  }
