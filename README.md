@@ -18,6 +18,7 @@ From the repository root:
 python -m http.server 8766 --bind 127.0.0.1
 python tools/validate_site.py .
 python tools/test_project_labels.py
+python tools/test_project_dates.py
 ```
 
 Validation requires Python and Node.js, but no third-party packages. It checks release markup, local HTML/CSS resources, JavaScript syntax, the domain configuration and the Delivered With Care gallery.

@@ -1,9 +1,58 @@
 {
-  "jam-in": {"title": "Jam-In", "fr": "Conception Produit", "en": "Product Design", "context_fr": "Plateforme web · Fondateur", "context_en": "Web platform · Founder"},
-  "seekers": {"title": "Seekers of the Ancient", "fr": "RPG en ligne", "en": "Online RPG", "context_fr": "Coopératif · Forge Hammer Entertainment", "context_en": "Co-op · Forge Hammer Entertainment"},
-  "lucky-luke": {"title": "Lucky Luke: Panique au Saloon", "fr": "VR Shooter", "en": "VR Shooter", "context_fr": "Kalank Games · FIBD 2025", "context_en": "Kalank Games · FIBD 2025"},
-  "heavy-skits": {"title": "Heavy Skits", "fr": "Card Game - Game Jam", "en": "Card Game - Game Jam", "context_fr": "48 h · 6 personnes", "context_en": "48 hours · 6 people"},
-  "airship-city": {"title": "Airship City", "fr": "City Builder", "en": "City Builder", "context_fr": "Prototype · Unity", "context_en": "Prototype · Unity"},
-  "delivered-with-care": {"title": "Delivered With Care", "fr": "Platformer - Game Jam", "en": "Platformer - Game Jam", "context_fr": "Unity", "context_en": "Unity"},
-  "greedy-bubble": {"title": "Greedy Bubble", "fr": "Bubble Catcher - Game Jam", "en": "Bubble Catcher - Game Jam", "context_fr": "Unity", "context_en": "Unity"}
+  "jam-in": {
+    "title": "Jam-In",
+    "fr": "Conception Produit",
+    "en": "Product Design",
+    "context_fr": "Fondateur",
+    "context_en": "Founder",
+    "year": "2025"
+  },
+  "seekers": {
+    "title": "Seekers of the Ancient",
+    "fr": "RPG en ligne",
+    "en": "Online RPG",
+    "context_fr": "Forge Hammer Entertainment",
+    "context_en": "Forge Hammer Entertainment",
+    "year": "2025–2026"
+  },
+  "lucky-luke": {
+    "title": "Lucky Luke: Panique au Saloon",
+    "fr": "VR Shooter",
+    "en": "VR Shooter",
+    "context_fr": "Kalank Games · FIBD",
+    "context_en": "Kalank Games · FIBD",
+    "year": "2025"
+  },
+  "heavy-skits": {
+    "title": "Heavy Skits",
+    "fr": "Card Game - Game Jam",
+    "en": "Card Game - Game Jam",
+    "context_fr": "Game jam",
+    "context_en": "Game jam",
+    "year": "2024"
+  },
+  "airship-city": {
+    "title": "Airship City",
+    "fr": "City Builder",
+    "en": "City Builder",
+    "context_fr": "Prototype",
+    "context_en": "Prototype",
+    "year": "2023"
+  },
+  "delivered-with-care": {
+    "title": "Delivered With Care",
+    "fr": "Platformer - Game Jam",
+    "en": "Platformer - Game Jam",
+    "context_fr": "Game jam",
+    "context_en": "Game jam",
+    "year": "2023"
+  },
+  "greedy-bubble": {
+    "title": "Greedy Bubble",
+    "fr": "Bubble Catcher - Game Jam",
+    "en": "Bubble Catcher - Game Jam",
+    "context_fr": "Game jam",
+    "context_en": "Game jam",
+    "year": "2023"
+  }
 }

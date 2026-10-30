@@ -236,6 +236,9 @@ body:has(.image-viewer[open]){overflow:hidden}
 /* Shared project identity: title, type, then context/date. */
 .project-heading .project-subtitle{order:1;flex:0 0 100%;margin:.25cqw 0 .6cqw;color:#c9bddb;font-size:1.55cqw;line-height:1.45}
 .project-heading .eyebrow{order:2}.project-heading .project-date{order:3}
+.project-heading .project-meta{order:2;flex:0 0 100%;display:flex;align-items:baseline;flex-wrap:wrap;gap:0 .55em;margin:0;color:#b4aabb;font-size:1cqw;line-height:1.5}
+.project-meta .project-year{white-space:nowrap}
+@media(max-width:600px){.project-heading .project-meta{font-size:2.6cqw}}
 .project-link-copy{display:flex;flex-direction:column;gap:5px;min-width:0;line-height:1.4}
 .index-link .project-link-title{color:#d0bde8;overflow-wrap:anywhere}
 .index-link .project-link-subtitle{color:#a9a1b6;font-size:.85em;font-weight:400;line-height:1.4;overflow-wrap:anywhere}
