@@ -57,13 +57,14 @@
   function quad(a,b,c,d,color,finish=0){triangle(a,b,c,color,finish);triangle(a,c,d,color,finish);}
   function outline(rect,z){const {x,y,w,h,r}=rect;const pts=[];const rad=Math.min(r,w/2,h/2);
     for(const [cx,cy,start] of [[x+w-rad,y+rad,-90],[x+w-rad,y+h-rad,0],[x+rad,y+h-rad,90],[x+rad,y+rad,180]])
-      for(let i=0;i<=12;i++){const angle=(start+i*7.5)*Math.PI/180;pts.push([cx+Math.cos(angle)*rad,cy+Math.sin(angle)*rad,z]);}
+      for(let i=0;i<=12;i++){const angle=(start+i*7.5)*Math.PI/180;const py=cy+Math.sin(angle)*rad,px=cx+Math.cos(angle)*rad;const taper=taperAt(rect,py);pts.push([px+(px<x+w/2?taper:-taper),py,z]);}
     return pts;
   }
-  const inset=(q,d)=>({x:q.x+d,y:q.y+d,w:q.w-2*d,h:q.h-2*d,r:Math.max(1,q.r-d)});
+  const inset=(q,d)=>({...q,x:q.x+d,y:q.y+d,w:q.w-2*d,h:q.h-2*d,r:Math.max(1,q.r-d)});
+  const taperAt=(q,y)=>(q.taper||0)*Math.pow(1-Math.max(0,Math.min(1,(y-q.y)/q.h)),1.5);
   function ring(a,za,b,zb,color,finish=0){const aa=outline(a,za),bb=outline(b,zb);for(let i=0;i<aa.length;i++){const j=(i+1)%aa.length;quad(aa[i],aa[j],bb[j],bb[i],color,finish);}}
   function fill(rect,z,color,finish=0){const points=outline(rect,z),center=[rect.x+rect.w/2,rect.y+rect.h/2,z];for(let i=0;i<points.length;i++)triangle(center,points[i],points[(i+1)%points.length],color,finish);}
-  function interval(q,y){if(y<q.y||y>q.y+q.h)return null;const r=Math.min(q.r,q.w/2,q.h/2);const dy=y<q.y+r?q.y+r-y:y>q.y+q.h-r?y-(q.y+q.h-r):0;const dx=r-Math.sqrt(Math.max(0,r*r-dy*dy));return [q.x+dx,q.x+q.w-dx];}
+  function interval(q,y){if(y<q.y||y>q.y+q.h)return null;const r=Math.min(q.r,q.w/2,q.h/2);const dy=y<q.y+r?q.y+r-y:y>q.y+q.h-r?y-(q.y+q.h-r):0;const dx=r-Math.sqrt(Math.max(0,r*r-dy*dy));const taper=taperAt(q,y);return [q.x+dx+taper,q.x+q.w-dx-taper];}
   function plate(rect,holes,z,color){
     const stops=new Set([rect.y,rect.y+rect.h]);for(let y=rect.y;y<rect.y+rect.h;y+=2)stops.add(y);
     holes.forEach(q=>{stops.add(q.y);stops.add(q.y+q.h)});const ys=[...stops].filter(y=>y>=rect.y&&y<=rect.y+rect.h).sort((a,b)=>a-b);
@@ -76,8 +77,9 @@
   function recess(q,depth,kind){
     ring(q,0,inset(q,2),-1,[.32,.31,.34],.35);
     ring(inset(q,2),-1,inset(q,4),-3,[.055,.06,.07],.35);
-    ring(inset(q,4),-3,inset(q,6),-depth,rubber,.1);
-    fill(inset(q,6),-depth,[.035,.043,.052]);
+    ring(inset(q,4),-3,inset(q,6),-7,[.034,.040,.049],.15);
+    ring(inset(q,6),-7,inset(q,8),-depth,rubber,.1);
+    fill(inset(q,8),-depth,[.035,.043,.052]);
     if(kind==='screen')ring(inset(q,6),-depth,inset(q,8),-depth+1,[.09,.10,.12],.4);
   }
   function button(q,brass=false,down=false){const height=down?1:3;const color=brass?[.50,.29,.15]:[.14,.16,.19];
@@ -95,25 +97,38 @@
     if(gl){gl.viewport(0,0,canvas.width,canvas.height);gl.uniform2f(viewport,W,H+24);gl.uniform2f(dimensions,W,H);gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);}
     vertices=[];
     const rect=(selector,r=6)=>{const b=shell.querySelector(selector).getBoundingClientRect();return {x:b.left-bounds.left,y:b.top-bounds.top,w:b.width,h:b.height,r};};
-    const outside={x:2,y:0,w:W-4,h:H,r:W<600?24:31};
-    ring(inset(outside,2),-16,outside,-8,[.055,.065,.08],.35);
+    const outside={x:3,y:0,w:W-6,h:H,r:W<600?29:39,taper:W<600?4:13};
+    // The rear shell carries the depth; the upper rim narrows gently toward the top.
+    ring(inset(outside,3),-31,outside,-12,[.055,.065,.08],.35);
     // A rolled edge with eight changing normals catches the soft key light.
     // Concentric geometry stays continuous at every responsive size.
     for(let i=0;i<8;i++){
       const a=i/8*Math.PI/2,b=(i+1)/8*Math.PI/2;
-      ring(inset(outside,1+10*(1-Math.cos(a))),-8+8*Math.sin(a),
-           inset(outside,1+10*(1-Math.cos(b))),-8+8*Math.sin(b),edge,.52);
+      ring(inset(outside,1+15*(1-Math.cos(a))),-12+12*Math.sin(a),
+           inset(outside,1+15*(1-Math.cos(b))),-12+12*Math.sin(b),edge,.52);
     }
-    ring(inset(outside,11),0,inset(outside,12),0,graphite,.1);
-    const face=inset(outside,12),module=rect('.cartridge-module');
+    ring(inset(outside,16),0,inset(outside,17),0,graphite,.1);
+    const face=inset(outside,17),module=rect('.cartridge-module');
     const cheek=parseFloat(getComputedStyle(shell.querySelector('.cartridge-module')).getPropertyValue('--cheek'));
-    const tray={x:module.x+cheek-3,y:module.y+7,w:module.w-cheek*2+6,h:module.h-27,r:6};
+    const tray={x:module.x+cheek-3,y:module.y+7,w:module.w-cheek*2+6,h:module.h-27,r:9};
     const screen=rect('.bezel',W<600?22:26);
     const nav=rect('.navigation-keys',10);const controls=rect('.control-deck');
     if(!nav.w){nav.x=controls.x+58;nav.y=controls.y+8;nav.w=controls.w-108;nav.h=controls.h-16;}
     const holes=[tray,screen];
     plate(face,holes,0,graphite);
-    recess(tray,15,'tray');recess(screen,14,'screen');
+    // A softly rounded shoulder joins the cartridge bay to the continuous lower fascia.
+    // Its position follows the existing controls rather than moving them.
+    const shoulderY=module.y+module.h-2;
+    const shoulder={x:face.x,y:shoulderY,w:face.w,h:face.y+face.h-shoulderY,r:W<600?17:24,taper:0};
+    ring(shoulder,0,inset(shoulder,1.5),1.2,[.20,.20,.23],.30);
+    ring(inset(shoulder,1.5),1.2,inset(shoulder,4),.25,graphite,.12);
+    plate(inset(shoulder,4),[screen],.25,graphite);
+    recess(tray,25,'tray');recess(screen,19,'screen');
+    // Rounded inner gasket: reflected edge, black rubber, then the recessed glass.
+    if(screen.w>100){
+      ring(inset(screen,3),-3,inset(screen,7),-8,[.035,.04,.05],.15);
+      ring(inset(screen,7),-8,inset(screen,10),-14,[.020,.024,.03],.12);
+    }
     const lip={x:tray.x+1,y:tray.y+tray.h-1,w:tray.w-2,h:9,r:2};
     ring(lip,-1,inset(lip,1),2,[.27,.26,.30],.35);fill(inset(lip,1),2,[.13,.14,.16]);
     for(const s of ['#shelf-prev','#shelf-next'])button(rect(s,6),false,pressed===s);
